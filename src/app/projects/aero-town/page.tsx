@@ -1,25 +1,45 @@
 "use client";
 
+import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Modal } from "@/components/ui/Modal";
+import { PlotAvailabilityViewer } from "@/components/projects/PlotAvailabilityViewer";
+import { MOCK_PLOT_DATA } from "@/data/plot-data";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Plane, TrendingUp, Truck, ShieldCheck, ArrowRight, Download, Phone } from "lucide-react";
+import { Plane, TrendingUp, Truck, ShieldCheck, ArrowRight, Download, Phone, Map } from "lucide-react";
 
 export default function AeroTownPage() {
+    const [isPlotsModalOpen, setIsPlotsModalOpen] = useState(false);
+
     return (
         <main className="min-h-screen bg-white overflow-x-hidden">
-            <HeroSection />
+            <HeroSection onOpenPlots={() => setIsPlotsModalOpen(true)} />
             <OverviewSection />
             <HighlightsSection />
             <LocationSection />
             <CTASection />
+
+            <Modal
+                isOpen={isPlotsModalOpen}
+                onClose={() => setIsPlotsModalOpen(false)}
+                title="Check Plot Availability"
+            >
+                <div className="h-[80vh] w-full"> {/* Fixed height for scrolling */}
+                    <PlotAvailabilityViewer
+                        projectName={MOCK_PLOT_DATA["aero-town"].name}
+                        layoutImage={MOCK_PLOT_DATA["aero-town"].layoutImage}
+                        plots={MOCK_PLOT_DATA["aero-town"].plots}
+                    />
+                </div>
+            </Modal>
         </main>
     );
 }
 
-function HeroSection() {
+function HeroSection({ onOpenPlots }: { onOpenPlots: () => void }) {
     return (
         <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
             <motion.div
@@ -62,6 +82,12 @@ function HeroSection() {
                     <div className="flex flex-wrap gap-4">
                         <Button className="bg-[#D4AF37] text-[#1a544e] px-8 py-4 rounded-full text-lg font-bold hover:bg-white transition-all duration-300 flex items-center gap-2">
                             <Download size={20} /> Download Brochure
+                        </Button>
+                        <Button
+                            onClick={onOpenPlots}
+                            className="bg-white text-[#1a544e] px-8 py-4 rounded-full text-lg font-bold hover:bg-[#D4AF37] hover:text-[#1a544e] transition-all duration-300 flex items-center gap-2"
+                        >
+                            <Map size={20} /> Check Availability
                         </Button>
                         <Link href="/contact">
                             <Button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-[#1a544e] transition-all duration-300">

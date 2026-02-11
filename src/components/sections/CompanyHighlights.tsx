@@ -49,7 +49,7 @@ export const CompanyHighlights = () => {
                     viewport={{ once: true }}
                     className="text-4xl md:text-5xl font-bold text-center text-[#1a544e] mb-16 font-space-grotesk"
                 >
-                    Why Choose Dholera Infra Development Pvt. Ltd.
+                    Why Choose DIDPL ?
                 </motion.h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto">

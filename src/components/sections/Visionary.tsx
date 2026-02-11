@@ -74,15 +74,15 @@ export function Visionary() {
                             {/* Main Image (Back) */}
                             <div className="relative w-[85%] aspect-[4/5] lg:w-[75%] rounded-2xl overflow-hidden shadow-2xl z-10 ml-auto bg-gray-200">
                                 <Image
-                                    src="/aerotown.jpg"
-                                    alt="Aero Town Residency"
+                                    src="/visionary-city.png"
+                                    alt="Visionary Smart City"
                                     fill
                                     className="object-cover hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a544e]/40 to-transparent"></div>
-                                <div className="absolute bottom-6 left-6 text-white max-w-[80%]">
-                                    <p className="font-serif text-2xl font-bold">Aero Town Residency</p>
-                                    <p className="text-sm opacity-90">Premium Living Spaces</p>
+                                <div className="absolute top-6 right-6 text-white max-w-[80%] text-right">
+                                    <p className="font-serif text-2xl font-bold">Visionary Smart City</p>
+                                    <p className="text-sm opacity-90">Future of Sustainable Living</p>
                                 </div>
 
                             </div>
@@ -90,8 +90,8 @@ export function Visionary() {
                             {/* Secondary Image (Front Overlap) */}
                             <div className="absolute bottom-10 left-0 lg:left-4 w-[55%] aspect-square rounded-2xl overflow-hidden shadow-2xl z-20 border-[6px] border-white bg-gray-200">
                                 <Image
-                                    src="/Dholera-Home-3.jpg"
-                                    alt="Dholera Homes"
+                                    src="/modern-green-home.png"
+                                    alt="Modern Green Home"
                                     fill
                                     className="object-cover hover:scale-105 transition-transform duration-700"
                                 />

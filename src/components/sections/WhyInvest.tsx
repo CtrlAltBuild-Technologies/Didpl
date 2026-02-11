@@ -53,7 +53,7 @@ export function WhyInvest() {
             <Container>
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <span className="flex items-center justify-center gap-2 text-[#EBC078] font-bold tracking-wide uppercase mb-3">
-                        <span className="text-xl">✨</span> Why Invest in ✨
+                        <span className="text-xl"></span> Why Invest in
                     </span>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}

@@ -1,11 +1,11 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
 import {
     ShieldCheck,
     Users,
@@ -125,8 +125,8 @@ function WhoWeAreSection() {
                         >
                             <div className="aspect-[4/5] relative rounded-[2rem] overflow-hidden shadow-2xl">
                                 <Image
-                                    src="/Dholera-Home-3.jpg"
-                                    alt="About DIDPL"
+                                    src="/didpl-team-office.png"
+                                    alt="DIDPL Team Meeting"
                                     fill
                                     className="object-cover"
                                 />
@@ -228,10 +228,10 @@ function WhoWeAreSection() {
 
 function StatsSection() {
     const stats = [
-        { label: "Happy Clients", value: "2500+", icon: Users },
-        { label: "Projects Completed", value: "15+", icon: Target },
-        { label: "Acres Developed", value: "500+", icon: TrendingUp },
-        { label: "Years Experience", value: "12+", icon: Award },
+        { label: "Happy Clients", value: 2500, suffix: "+", icon: Users },
+        { label: "Projects Completed", value: 15, suffix: "+", icon: Target },
+        { label: "Acres Developed", value: 500, suffix: "+", icon: TrendingUp },
+        { label: "Years Experience", value: 12, suffix: "+", icon: Award },
     ];
 
     return (
@@ -248,7 +248,9 @@ function StatsSection() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="text-center group px-4"
                         >
-                            <h3 className="text-5xl md:text-6xl font-serif font-bold mb-4 text-[#D4AF37]">{stat.value}</h3>
+                            <h3 className="text-5xl md:text-6xl font-serif font-bold mb-4 text-[#D4AF37]">
+                                <Counter value={stat.value} suffix={stat.suffix} />
+                            </h3>
                             <p className="text-gray-200 font-medium tracking-widest uppercase text-xs md:text-sm">{stat.label}</p>
                         </motion.div>
                     ))}
@@ -256,6 +258,22 @@ function StatsSection() {
             </Container>
         </section>
     );
+}
+
+function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
+    const ref = useRef(null);
+    const inView = useInView(ref, { once: true, margin: "-100px" });
+    const spring = useSpring(0, { duration: 2500, bounce: 0 });
+
+    useEffect(() => {
+        if (inView) {
+            spring.set(value);
+        }
+    }, [inView, value, spring]);
+
+    const display = useTransform(spring, (current) => Math.round(current) + suffix);
+
+    return <motion.span ref={ref}>{display}</motion.span>;
 }
 
 function VisionMissionSection() {
