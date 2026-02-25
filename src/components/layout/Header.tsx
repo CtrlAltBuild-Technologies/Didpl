@@ -22,6 +22,7 @@ const navigation = [
         ]
     },
     { name: "Our Team", href: "/team" },
+    { name: "Blog", href: "/blog" },
     { name: "Contact Us", href: "/contact" },
 ];
 
