@@ -74,18 +74,27 @@ export function WhyInvest() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-[#FFFBF2] p-6 rounded-2xl border border-[#EBC078]/30 flex flex-col items-center text-center hover:shadow-xl hover:border-[#EBC078] hover:-translate-y-1 transition-all duration-300 group cursor-default"
+                            className="group relative h-[240px] [perspective:1000px] cursor-pointer"
                         >
-                            <div className="w-16 h-16 bg-[#1a544e] rounded-full flex-shrink-0 flex items-center justify-center text-[#EBC078] mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                                <feature.icon size={32} strokeWidth={1.5} />
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-bold text-[#1a544e] mb-2 font-serif">
-                                    {feature.title}
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed text-sm">
-                                    {feature.description}
-                                </p>
+                            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] rounded-2xl shadow-sm hover:shadow-xl">
+
+                                {/* Front Face */}
+                                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] bg-[#FFFBF2] p-6 rounded-2xl border border-[#EBC078]/30 group-hover:border-[#EBC078] flex flex-col items-center justify-center text-center transition-colors duration-300">
+                                    <div className="w-16 h-16 bg-[#1a544e] rounded-full flex-shrink-0 flex items-center justify-center text-[#EBC078] mb-4 shadow-md transition-transform duration-300 group-hover:scale-110">
+                                        <feature.icon size={32} strokeWidth={1.5} />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-[#1a544e] font-serif">
+                                        {feature.title}
+                                    </h3>
+                                </div>
+
+                                {/* Back Face */}
+                                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#1a544e] p-6 rounded-2xl border border-[#EBC078] flex flex-col items-center justify-center text-center">
+                                    <div className="w-10 h-1 bg-[#EBC078] mx-auto mb-4 rounded-full" />
+                                    <p className="text-[#FFFBF2] leading-relaxed text-sm font-medium">
+                                        {feature.description}
+                                    </p>
+                                </div>
                             </div>
                         </motion.div>
                     ))}

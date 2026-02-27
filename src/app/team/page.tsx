@@ -10,25 +10,25 @@ import { Mail, Quote, ArrowRight, ArrowUpRight, Linkedin, ChevronDown } from "lu
 
 const team = [
     {
-        name: "Mr. Rajesh Patel",
-        role: "Founder & CMD",
-        image: "/images/team/founder-cmd.png",
-        bio: "With over 25 years of experience in real estate and infrastructure development.",
-        linkedin: "#"
+        name: "Nirav Oza",
+        role: "Co-Founder & Director",
+        image: "/images/team/nirav-oza.png",
+        bio: "The next decade for DIDPL is filled with promise. My vision is to lead us toward completing 20+ strong projects, while keeping our foundation rooted in trust and transparency. As we grow, we will ensure that every customer smiles with confidence, every investor feels reassured, and every employee experiences pride in being part of our story. This is the future we are shaping... together!",
+        linkedin: "https://www.linkedin.com/in/nirav-oza/"
     },
     {
-        name: "Ms. Priya Sharma",
-        role: "Head of Sales",
-        image: "/images/team/head-of-sales.png",
-        bio: "Leading our global sales strategy with a focus on Dholera SIR excellence.",
-        linkedin: "#"
+        name: "Seema Amin",
+        role: "Co-Founder & Director",
+        image: "/images/team/seema-amin.png",
+        bio: "I believe in building projects that enrich lives. Projects that are strategically located, thoughtfully planned, and consistently rewarding for our clients. My vision is for DIDPL to become a source of happiness, trust, and inspiration for everyone we serve and everyone who works with us. When our clients prosper and our people thrive, that is when our true success shines.",
+        linkedin: "https://www.linkedin.com/in/seema-amin-84722b176/"
     },
     {
-        name: "Mr. Amit Shah",
-        role: "Legal Advisor",
-        image: "/images/team/legal-advisor.png",
-        bio: "Ensuring all our investments meet the highest standards of legal compliance.",
-        linkedin: "#"
+        name: "Milind Ranpara",
+        role: "Co-Founder & Director",
+        image: "/images/team/milind-ranpara.png",
+        bio: "My vision is to create a company where trust, service, and satisfaction guide every decision we make. I want us to deliver seamless, end-to-end real estate solutions that genuinely help people grow. By using my on-ground experience and strong local connections, I aim to build projects that offer clarity, confidence, and long-term value to every stakeholder who chooses to walk with us.",
+        linkedin: "https://www.linkedin.com/in/milind-ranpara-219627298/"
     }
 ];
 
@@ -159,9 +159,9 @@ function TeamGrid() {
                                     className="object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
                                 />
                                 {/* Hover Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#1a544e]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                                    <div className="text-white">
-                                        <p className="text-sm font-light mb-4 line-clamp-3">{member.bio}</p>
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#1a544e]/95 via-[#1a544e]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-y-auto p-8 flex flex-col justify-end">
+                                    <div className="text-white mt-auto">
+                                        <p className="text-sm font-light leading-relaxed mb-4">{member.bio}</p>
                                         <Link href={member.linkedin} className="inline-flex items-center gap-2 text-[#D4AF37] font-bold text-sm group/link">
                                             LinkedIn Profile <ArrowUpRight size={16} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
                                         </Link>
@@ -179,8 +179,8 @@ function TeamGrid() {
                         </motion.div>
                     ))}
                 </div>
-            </Container>
-        </section>
+            </Container >
+        </section >
     );
 }
 

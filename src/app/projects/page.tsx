@@ -45,8 +45,6 @@ export default function ProjectsPage() {
                                 <div className="pt-8 px-4 pb-4 text-center">
                                     <h3 className="text-3xl font-serif font-bold text-[#1a544e] mb-2">{project.title}</h3>
                                     <p className="text-[#D4AF37] font-medium tracking-widest text-sm uppercase mb-4">{project.location}</p>
-                                    <div className="h-[1px] w-16 bg-gray-200 mx-auto mb-4"></div>
-                                    <p className="text-gray-600 font-serif italic text-lg">{project.price}</p>
                                 </div>
                             </div>
                         ))}

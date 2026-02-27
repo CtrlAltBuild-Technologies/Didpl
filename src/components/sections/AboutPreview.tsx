@@ -48,7 +48,7 @@ export function AboutPreview() {
                             Building Your Dreams with <br /> Trust & Transparency
                         </h2>
                         <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                            Dholera Infra Development Pvt. Ltd. (DIDPL) is a pioneer in developing Dholera SIR. We are committed to providing premium residential and commercial plots with world-class infrastructure and high return on investment.
+                            Dholera Infra Development Pvt. Ltd. (DIDPL) is an emerging yet fast-rising name in India’s real estate landscape, driven by a powerful vision to shape the future of urban development in Dholera SIR : India’s first Greenfield Smart City.
                         </p>
 
                         <ul className="space-y-4 mb-8">

@@ -74,7 +74,7 @@ export function Hero() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {
                         [
-                            { icon: Building2, value: "15+ Years", label: "Experience" },
+                            { icon: Building2, value: "15+ Years", label: " of Experience of Directors" },
                             { icon: Smile, value: "3000+", label: "Happy Customers" },
                             { icon: MapPin, value: "Prime", label: "Locations" },
                             { icon: FileCheck, value: "100%", label: "Legal Transparency" }

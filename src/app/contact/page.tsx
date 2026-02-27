@@ -40,7 +40,7 @@ function ContactDetailsSection() {
                             <InfoCard
                                 icon={MapPin}
                                 title="Corporate Office"
-                                content="708, One World West, Near Ambli T-junction, Bopal, Ahmedabad, Gujarat - 380015"
+                                content="Dholera Infra Development Pvt. Ltd. 309, 3rd Floor, Siddharth Annexe 2, Above Mirch Masala Restaurant, Sama-Savali Road, Vadodara – 391740, Gujarat (IN)"
                             />
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <InfoCard

@@ -73,10 +73,9 @@ export function Projects() {
                                         <MapPin className="w-4 h-4" />
                                         <span className="text-sm font-medium">{project.location}</span>
                                     </div>
-                                    <h3 className="text-2xl md:text-3xl font-serif font-bold text-white mb-2 leading-tight">
+                                    <h3 className="text-2xl md:text-3xl font-serif font-bold text-white mb-4 leading-tight">
                                         {project.title}
                                     </h3>
-                                    <p className="text-[#D4AF37] font-bold text-lg mb-4">{project.price}</p>
 
                                     {/* Features List - Reveals on Hover (Desktop) / Always visible (Mobile) */}
                                     <div className="mb-6 space-y-2 opacity-100 md:opacity-0 md:h-0 md:group-hover:opacity-100 md:group-hover:h-auto transition-all duration-500 overflow-hidden">

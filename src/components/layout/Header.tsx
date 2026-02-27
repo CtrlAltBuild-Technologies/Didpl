@@ -17,8 +17,9 @@ const navigation = [
         name: "Our Projects",
         href: "/projects",
         submenu: [
+            { name: "Aero Town Residency", href: "/projects/aero-town" },
             { name: "Dholera Homes 3", href: "/projects/dholera-homes-3" },
-            { name: "AERO Town Residency", href: "/projects/aero-town" },
+            { name: "Dholera IndusPark", href: "/projects/dholera-induspark" },
         ]
     },
     { name: "Our Team", href: "/team" },

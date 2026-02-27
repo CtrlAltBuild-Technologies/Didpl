@@ -169,11 +169,14 @@ function WhoWeAreSection() {
                             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#1a544e] mb-8 leading-[1.1]">
                                 Crafting the Skyline of <span className="text-[#D4AF37] italic">Tomorrow</span>.
                             </h2>
-                            <p className="text-gray-600 text-lg leading-relaxed mb-6 font-light">
-                                Dholera Infra Development Pvt. Ltd. (DIDPL) is more than just a real estate developer; we are the architects of future living. Situated in India’s first platinum-rated Greenfield Smart City, we blend <strong className="text-[#1a544e] font-medium">vision, integrity, and innovation</strong> to create spaces that inspire.
+                            <p className="text-gray-600 text-lg leading-relaxed mb-4 font-light">
+                                Dholera Infra Development Pvt. Ltd. (DIDPL) is an emerging yet fast-rising name in India’s real estate landscape, driven by a powerful vision to shape the future of urban development in Dholera SIR : India’s first Greenfield Smart City. Though the company itself is young, founded just a year ago in Vadodara, it is led by a highly seasoned team with over <strong className="text-[#1a544e] font-medium">12 years of proven experience</strong> in land development, urban planning, and transparent real-estate practices. This strong foundation of expertise has already earned the trust of <strong className="text-[#1a544e] font-medium">3,000+ satisfied clients</strong> across India through earlier ventures and professional engagements.
+                            </p>
+                            <p className="text-gray-600 text-lg leading-relaxed mb-4 font-light">
+                                At DIDPL, we are committed to delivering legally compliant, transparent, and future-ready land development solutions for visionary investors. Every project is supported by clear legal documentation, government-aligned processes, and high-potential strategic locations designed to ensure long-term value appreciation and maximum investor confidence.
                             </p>
                             <p className="text-gray-600 text-lg leading-relaxed mb-10 font-light">
-                                With a legacy spanning over a decade, our commitment goes beyond legal compliance and land development—we build <strong className="text-[#1a544e] font-medium">trust</strong>. Whether looking for a strategic investment or a dream home, DIDPL ensures your journey is transparent, secure, and rewarding.
+                                Our philosophy is built on trust, innovation, and customer-first service. Whether it’s residential, commercial, or industrial land in Dholera SIR, DIDPL offers a secure, professional, and growth-oriented investment journey. Crafted for those who wish to be part of India’s next big smart-city success story. <strong className="text-[#1a544e] font-medium">DIDPL is not just developing land! We are helping build futures, one smart investment at a time.</strong>
                             </p>
 
                             <Link href="/contact">
@@ -228,7 +231,7 @@ function WhoWeAreSection() {
 
 function StatsSection() {
     const stats = [
-        { label: "Happy Clients", value: 2500, suffix: "+", icon: Users },
+        { label: "Happy Clients", value: 3000, suffix: "+", icon: Users },
         { label: "Projects Completed", value: 15, suffix: "+", icon: Target },
         { label: "Acres Developed", value: 500, suffix: "+", icon: TrendingUp },
         { label: "Years Experience", value: 12, suffix: "+", icon: Award },

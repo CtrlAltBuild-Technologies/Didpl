@@ -3,7 +3,6 @@ export const projects = [
         id: "dholera-homes-2",
         title: "Dholera Homes 2",
         location: "City Center, Dholera",
-        price: "Sold Out",
         image: "/projects/dholera-homes-2.png",
         features: ["Premium Location", "Smart Amenities", "Ready Possession"],
         status: "Completed"
@@ -12,7 +11,6 @@ export const projects = [
         id: "dholera-homes-3",
         title: "Dholera Homes 3",
         location: "TP-2 West-B, Dholera SIR",
-        price: "Starts ₹8500/sq. yd.",
         image: "/projects/dholera-homes-3.png",
         features: ["Residential Zone", "Next to Metro", "Wide Roads"],
         status: "Booking Open"
@@ -21,7 +19,6 @@ export const projects = [
         id: "aero-town",
         title: "AERO Town Residency",
         location: "Near International Airport",
-        price: "Starts ₹6500/sq. yd.",
         image: "/projects/aero-town.png",
         features: ["Airport Zone", "High Appreciation", "Gated Community"],
         status: "Selling Fast"
