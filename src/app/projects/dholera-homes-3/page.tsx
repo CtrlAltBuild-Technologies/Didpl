@@ -80,9 +80,11 @@ function HeroSection({ onOpenPlots }: { onOpenPlots: () => void }) {
                     </p>
 
                     <div className="flex flex-wrap gap-4">
-                        <Button className="bg-[#D4AF37] text-[#1a544e] px-8 py-4 rounded-full text-lg font-bold hover:bg-white transition-all duration-300 flex items-center gap-2">
-                            <Download size={20} /> Download Brochure
-                        </Button>
+                        <a href="/dholera_homes_brochure.pdf" download="Dholera_Homes_Brochure.pdf" target="_blank" rel="noopener noreferrer">
+                            <Button className="bg-[#D4AF37] text-[#1a544e] px-8 py-4 rounded-full text-lg font-bold hover:bg-white transition-all duration-300 flex items-center gap-2">
+                                <Download size={20} /> Download Brochure
+                            </Button>
+                        </a>
                         <Button
                             onClick={onOpenPlots}
                             className="bg-white text-[#1a544e] px-8 py-4 rounded-full text-lg font-bold hover:bg-[#D4AF37] hover:text-[#1a544e] transition-all duration-300 flex items-center gap-2"

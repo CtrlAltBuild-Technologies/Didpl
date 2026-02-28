@@ -30,7 +30,7 @@ export function AboutPreview() {
                         </div>
                         {/* Experience Badge */}
                         <div className="absolute -bottom-6 -right-6 bg-accent text-white p-8 rounded-xl shadow-lg hidden md:block">
-                            <div className="text-4xl font-bold mb-1">12+</div>
+                            <div className="text-4xl font-bold mb-1">15+</div>
                             <div className="text-sm font-medium uppercase tracking-wider">Years of<br />Experience</div>
                         </div>
                     </motion.div>

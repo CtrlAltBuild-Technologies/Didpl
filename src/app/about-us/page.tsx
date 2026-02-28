@@ -105,7 +105,7 @@ function WhoWeAreSection() {
         },
         {
             title: "L – Legacy",
-            desc: "Over 12 years of experience with 3000+ satisfied customers across India.",
+            desc: "Over 15 years of experience with 3000+ satisfied customers across India.",
             icon: Award
         }
     ];
@@ -170,7 +170,7 @@ function WhoWeAreSection() {
                                 Crafting the Skyline of <span className="text-[#D4AF37] italic">Tomorrow</span>.
                             </h2>
                             <p className="text-gray-600 text-lg leading-relaxed mb-4 font-light">
-                                Dholera Infra Development Pvt. Ltd. (DIDPL) is an emerging yet fast-rising name in India’s real estate landscape, driven by a powerful vision to shape the future of urban development in Dholera SIR : India’s first Greenfield Smart City. Though the company itself is young, founded just a year ago in Vadodara, it is led by a highly seasoned team with over <strong className="text-[#1a544e] font-medium">12 years of proven experience</strong> in land development, urban planning, and transparent real-estate practices. This strong foundation of expertise has already earned the trust of <strong className="text-[#1a544e] font-medium">3,000+ satisfied clients</strong> across India through earlier ventures and professional engagements.
+                                Dholera Infra Development Pvt. Ltd. (DIDPL) is an emerging yet fast-rising name in India’s real estate landscape, driven by a powerful vision to shape the future of urban development in Dholera SIR : India’s first Greenfield Smart City. Though the company itself is young, founded just a year ago in Vadodara, it is led by a highly seasoned team with over <strong className="text-[#1a544e] font-medium">15 years of proven experience</strong> in land development, urban planning, and transparent real-estate practices. This strong foundation of expertise has already earned the trust of <strong className="text-[#1a544e] font-medium">3,000+ satisfied clients</strong> across India through earlier ventures and professional engagements.
                             </p>
                             <p className="text-gray-600 text-lg leading-relaxed mb-4 font-light">
                                 At DIDPL, we are committed to delivering legally compliant, transparent, and future-ready land development solutions for visionary investors. Every project is supported by clear legal documentation, government-aligned processes, and high-potential strategic locations designed to ensure long-term value appreciation and maximum investor confidence.
@@ -234,7 +234,7 @@ function StatsSection() {
         { label: "Happy Clients", value: 3000, suffix: "+", icon: Users },
         { label: "Projects Completed", value: 15, suffix: "+", icon: Target },
         { label: "Acres Developed", value: 500, suffix: "+", icon: TrendingUp },
-        { label: "Years Experience", value: 12, suffix: "+", icon: Award },
+        { label: "Years Experience", value: 15, suffix: "+", icon: Award },
     ];
 
     return (
