@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, Train, ShieldCheck, Warehouse, ArrowRight, Download, Phone, Map } from "lucide-react";
+import { PlotPriceCalculator } from "@/components/projects/PlotPriceCalculator";
 
 export default function DholeraHomes3Page() {
     const [isPlotsModalOpen, setIsPlotsModalOpen] = useState(false);
@@ -21,6 +22,7 @@ export default function DholeraHomes3Page() {
             <HighlightsSection />
             <LocationSection />
             <CTASection />
+            <PlotPriceCalculator projectId="dholera-homes-3" />
 
             <Modal
                 isOpen={isPlotsModalOpen}

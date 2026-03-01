@@ -25,12 +25,12 @@ export interface PaymentTerms {
 }
 
 export const COMPANY_INFO: CompanyInfo = {
-    name: "Dholera SIR Infra Development",
+    name: "Dholera Infra Development Pvt. Ltd.",
     tagline: "Residential Plots, Villas & Bungalows",
-    address: "Plot No. 337, Sector - 8, Gandhinagar, 382 009",
-    phone: "+91-9898512348",
-    email: "info@dholerasmartcity.com",
-    website: "www.dholerasmartcity.com",
+    address: "309, 3rd Floor, Siddharth Annexe 2, Sama-Savali Road, Vadodara – 391740",
+    phone: "+91 8866 909 600",
+    email: "info@didpl.com",
+    website: "www.didpl.com",
     logo: "/Dholera_logo.svg",
 };
 

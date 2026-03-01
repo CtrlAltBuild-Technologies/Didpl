@@ -75,7 +75,8 @@ export function Header() {
                             <div key={item.name} className="relative group">
                                 {item.submenu ? (
                                     <>
-                                        <button
+                                        <Link
+                                            href={item.href}
                                             className={`flex items-center gap-1 text-base font-medium transition-colors hover:text-accent py-2 ${pathname.startsWith(item.href)
                                                 ? "text-accent font-semibold"
                                                 : "text-gray-700"
@@ -83,7 +84,7 @@ export function Header() {
                                         >
                                             {item.name}
                                             <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
-                                        </button>
+                                        </Link>
 
                                         {/* Dropdown Menu */}
                                         <div className="absolute top-full left-0 pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
@@ -140,16 +141,25 @@ export function Header() {
                             <div key={item.name} className="border-b border-gray-100 last:border-0">
                                 {item.submenu ? (
                                     <div>
-                                        <button
-                                            onClick={() => setMobileSubmenuOpen(mobileSubmenuOpen === item.name ? "" : item.name)}
-                                            className={`flex items-center justify-between w-full text-lg font-medium py-3 ${pathname.startsWith(item.href) ? "text-accent" : "text-gray-800"}`}
-                                        >
-                                            {item.name}
-                                            <ChevronRight
-                                                size={18}
-                                                className={`transition-transform duration-300 ${mobileSubmenuOpen === item.name ? "rotate-90" : ""}`}
-                                            />
-                                        </button>
+                                        <div className="flex items-center justify-between">
+                                            <Link
+                                                href={item.href}
+                                                className={`flex-1 text-lg font-medium py-3 ${pathname.startsWith(item.href) ? "text-accent" : "text-gray-800"
+                                                    }`}
+                                            >
+                                                {item.name}
+                                            </Link>
+                                            <button
+                                                onClick={() => setMobileSubmenuOpen(mobileSubmenuOpen === item.name ? "" : item.name)}
+                                                className="p-3 text-gray-500"
+                                                aria-label="Toggle submenu"
+                                            >
+                                                <ChevronRight
+                                                    size={18}
+                                                    className={`transition-transform duration-300 ${mobileSubmenuOpen === item.name ? "rotate-90" : ""}`}
+                                                />
+                                            </button>
+                                        </div>
                                         <div className={`overflow-hidden transition-all duration-300 ${mobileSubmenuOpen === item.name ? "max-h-64 opacity-100 mb-3" : "max-h-0 opacity-0"}`}>
                                             <div className="pl-4 flex flex-col gap-2 border-l-2 border-gray-100 ml-2">
                                                 {item.submenu.map((subItem) => (

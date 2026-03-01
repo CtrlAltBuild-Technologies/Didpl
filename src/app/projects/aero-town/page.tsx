@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Plane, TrendingUp, Truck, ShieldCheck, ArrowRight, Download, Phone, Map } from "lucide-react";
+import { PlotPriceCalculator } from "@/components/projects/PlotPriceCalculator";
 
 export default function AeroTownPage() {
     const [isPlotsModalOpen, setIsPlotsModalOpen] = useState(false);
@@ -21,6 +22,7 @@ export default function AeroTownPage() {
             <HighlightsSection />
             <LocationSection />
             <CTASection />
+            <PlotPriceCalculator projectId="aero-town" />
 
             <Modal
                 isOpen={isPlotsModalOpen}
