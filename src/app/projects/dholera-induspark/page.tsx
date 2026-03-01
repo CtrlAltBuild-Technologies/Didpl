@@ -9,10 +9,10 @@ import { MOCK_PLOT_DATA } from "@/data/plot-data";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Plane, TrendingUp, Truck, ShieldCheck, ArrowRight, Download, Phone, Map } from "lucide-react";
+import { Map, TrendingUp, Truck, ShieldCheck, ArrowRight, Download, Phone } from "lucide-react";
 import { PlotPriceCalculator } from "@/components/projects/PlotPriceCalculator";
 
-export default function AeroTownPage() {
+export default function IndusParkPage() {
     const [isPlotsModalOpen, setIsPlotsModalOpen] = useState(false);
 
     return (
@@ -22,7 +22,7 @@ export default function AeroTownPage() {
             <HighlightsSection />
             <LocationSection />
             <CTASection />
-            <PlotPriceCalculator projectId="aero-town" />
+            <PlotPriceCalculator projectId="dholera-induspark" />
 
             <Modal
                 isOpen={isPlotsModalOpen}
@@ -31,9 +31,9 @@ export default function AeroTownPage() {
             >
                 <div className="h-[80vh] w-full"> {/* Fixed height for scrolling */}
                     <PlotAvailabilityViewer
-                        projectName={MOCK_PLOT_DATA["aero-town"].name}
-                        layoutImage={MOCK_PLOT_DATA["aero-town"].layoutImage}
-                        plots={MOCK_PLOT_DATA["aero-town"].plots}
+                        projectName={MOCK_PLOT_DATA["dholera-induspark"]?.name || "Dholera IndusPark"}
+                        layoutImage={MOCK_PLOT_DATA["dholera-induspark"]?.layoutImage || "/projects/dholera-homes-2.png"}
+                        plots={MOCK_PLOT_DATA["dholera-induspark"]?.plots || []}
                     />
                 </div>
             </Modal>
@@ -52,8 +52,8 @@ function HeroSection({ onOpenPlots }: { onOpenPlots: () => void }) {
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
                 <Image
-                    src="/projects/aero-town-ai.png"
-                    alt="AERO Town Residency"
+                    src="/projects/induspark-ai.png"
+                    alt="Dholera IndusPark"
                     fill
                     className="object-cover"
                     priority
@@ -70,30 +70,24 @@ function HeroSection({ onOpenPlots }: { onOpenPlots: () => void }) {
                     <div className="flex items-center gap-4 mb-6">
                         <span className="h-[2px] w-20 bg-[#D4AF37]" />
                         <span className="text-[#D4AF37] font-bold tracking-[0.2em] uppercase text-sm">
-                            Airport Zone
+                            City Center Zone
                         </span>
                     </div>
 
                     <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
-                        AERO Town Residency
+                        Dholera IndusPark
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-200 font-light mb-10 max-w-2xl">
-                        High Appreciation Plots in the <span className="text-[#D4AF37] font-medium">Logistic & Cargo Zone</span>, near Dholera International Airport.
+                        Premium plots in the <span className="text-[#D4AF37] font-medium">City Center of Dholera SIR</span>, designed for smart living and strategic commercial growth.
                     </p>
 
                     <div className="flex flex-wrap gap-4">
-                        <a href="/Aero_town_brochure.pdf" download="Aero_Town_Residency_Brochure.pdf" target="_blank" rel="noopener noreferrer">
+                        <a href="#" target="_blank" rel="noopener noreferrer">
                             <Button className="bg-[#D4AF37] text-[#1a544e] px-8 py-4 rounded-full text-lg font-bold hover:bg-white transition-all duration-300 flex items-center gap-2">
                                 <Download size={20} /> Download Brochure
                             </Button>
                         </a>
-                        <a href="#proposal-printable-aero-town" className="block">
-                            <Button
-                                className="bg-white text-[#1a544e] px-8 py-4 rounded-full text-lg font-bold hover:bg-[#D4AF37] hover:text-[#1a544e] transition-all duration-300 flex items-center gap-2"
-                            >
-                                <Map size={20} /> Check Availability
-                            </Button>
-                        </a>
+
                         <Link href="/contact">
                             <Button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-[#1a544e] transition-all duration-300">
                                 Book Site Visit
@@ -114,23 +108,23 @@ function OverviewSection() {
                     <div className="md:w-1/2">
                         <h4 className="text-[#D4AF37] font-bold tracking-widest uppercase mb-4 text-sm">Overview</h4>
                         <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1a544e] mb-6 leading-tight">
-                            Your Gateway to <br /> <span className="italic text-[#D4AF37]">Global Connectivity</span>
+                            The Heart of <br /> <span className="italic text-[#D4AF37]">Dholera SIR</span>
                         </h2>
                         <p className="text-gray-600 text-lg leading-relaxed mb-6 font-light">
-                            AERO Town Residency is strategically situated to capitalize on the immense growth potential of Dholera's International Airport. Located in the Logistic and Cargo Zone, this project is ideal for those looking for rapid appreciation driven by commercial and industrial development.
+                            Dholera IndusPark offers an unparalleled opportunity to invest in the City Center of India's first smart city. Designed for ready possession, it blends commercial viability with premium residential features.
                         </p>
                         <p className="text-gray-600 text-lg leading-relaxed mb-8 font-light">
-                            This is not just a residential plot; it's an investment in the future logistics hub of India.
+                            Secure your plot in the most sought-after zone with complete infrastructure planning.
                         </p>
 
                         <div className="grid grid-cols-2 gap-8">
                             <div>
-                                <h3 className="text-3xl font-serif font-bold text-[#1a544e]">5 Min</h3>
-                                <p className="text-gray-500 text-sm uppercase tracking-wider">From Airport</p>
+                                <h3 className="text-3xl font-serif font-bold text-[#1a544e]">Prime</h3>
+                                <p className="text-gray-500 text-sm uppercase tracking-wider">City Center</p>
                             </div>
                             <div>
-                                <h3 className="text-3xl font-serif font-bold text-[#1a544e]">High</h3>
-                                <p className="text-gray-500 text-sm uppercase tracking-wider">ROI Potential</p>
+                                <h3 className="text-3xl font-serif font-bold text-[#1a544e]">Ready</h3>
+                                <p className="text-gray-500 text-sm uppercase tracking-wider">Possession</p>
                             </div>
                         </div>
                     </div>
@@ -138,10 +132,10 @@ function OverviewSection() {
                         <div className="absolute inset-0 bg-[#D4AF37] -rotate-2 rounded-[3rem] opacity-20" />
                         <div className="relative h-full w-full rounded-[3rem] overflow-hidden shadow-xl border-4 border-white">
                             <Image
-                                src="/projects/aero-town.png" // Placeholder
-                                alt="Aero Town Overview"
+                                src="/photos/Induspark-logo.png"
+                                alt="Dholera IndusPark Logo"
                                 fill
-                                className="object-cover"
+                                className="object-contain p-8 bg-white"
                             />
                         </div>
                     </div>
@@ -153,10 +147,10 @@ function OverviewSection() {
 
 function HighlightsSection() {
     const highlights = [
-        { icon: Plane, title: "Airport Zone", desc: "Located within minutes of the Dholera International Airport." },
-        { icon: TrendingUp, title: "High Appreciation", desc: "Direct benefit from the booming aviation and logistics sector." },
-        { icon: Truck, title: "Cargo Connectivity", desc: "Adjacent to wide roads planned for heavy cargo movement." },
-        { icon: ShieldCheck, title: "Gated Security", desc: "Peace of mind with full perimeter fencing and security." },
+        { icon: Map, title: "City Center", desc: "Positioned in the premium central zone of Dholera SIR." },
+        { icon: TrendingUp, title: "Smart Amenities", desc: "Equipped with next-gen infrastructure and smart utilities." },
+        { icon: Truck, title: "Wide Connectivity", desc: "Easy access through broad, well-planned arterial roads." },
+        { icon: ShieldCheck, title: "Ready Possession", desc: "Plots are available for immediate development and possession." },
     ];
 
     return (
@@ -164,7 +158,7 @@ function HighlightsSection() {
             <Container>
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1a544e] mb-4">Why Invest Here?</h2>
-                    <p className="text-gray-500 text-lg max-w-2xl mx-auto">A strategic asset in India's next major aviation hub.</p>
+                    <p className="text-gray-500 text-lg max-w-2xl mx-auto">A visionary asset in the heart of Dholera's Smart City.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -208,11 +202,11 @@ function LocationSection() {
 
                         <ul className="space-y-6">
                             {[
-                                "5 Mins from International Airport",
-                                "Direct Access to Expressway",
-                                "Near Activation Area",
-                                "Adjoining 250m Wide Expressway",
-                                "In the heart of Logistic Zone"
+                                "Located in City Center, Dholera",
+                                "Proximity to key commercial hubs",
+                                "Direct access to central expressways",
+                                "Smart infrastructure connectivity",
+                                "High visibility node"
                             ].map((item, i) => (
                                 <li key={i} className="flex items-center gap-4 text-lg font-light text-gray-200">
                                     <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
@@ -238,9 +232,9 @@ function CTASection() {
                     <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#D4AF37]/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" />
 
                     <div className="relative z-10 max-w-3xl mx-auto">
-                        <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">Invest in the Future of Aviation</h2>
+                        <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">Invest in the City Center</h2>
                         <p className="text-xl text-gray-200 mb-10 font-light">
-                            Don't miss this opportunity to own land near one of India's most significant infrastructure projects.
+                            Secure your prime plot in Dholera IndusPark today.
                         </p>
                         <div className="flex flex-col md:flex-row justify-center gap-6">
                             <Button className="bg-[#D4AF37] text-[#1a544e] px-10 py-5 rounded-full text-lg font-bold hover:bg-white hover:text-[#1a544e] transition-all duration-300">

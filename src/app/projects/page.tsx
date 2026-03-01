@@ -32,13 +32,15 @@ export default function ProjectsPage() {
                                 className={`relative p-2 bg-white shadow-xl group border-t-4 border-[#D4AF37] ${index % 2 === 0 ? 'md:mt-0' : 'md:mt-16'}`}
                             >
                                 {/* Image Frame */}
-                                <div className="relative aspect-[4/3] border-4 border-double border-[#D4AF37]/30 overflow-hidden">
-                                    <Image
-                                        src={project.image}
-                                        alt={project.title}
-                                        fill
-                                        className="object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[10%] group-hover:grayscale-0"
-                                    />
+                                <div className="relative aspect-[4/3] border-4 border-double border-[#D4AF37]/30 overflow-hidden bg-white flex items-center justify-center p-8">
+                                    <div className="relative w-[80%] h-[80%] transition-transform duration-1000 group-hover:scale-110">
+                                        <Image
+                                            src={project.logo || project.image}
+                                            alt={project.title}
+                                            fill
+                                            className="object-contain"
+                                        />
+                                    </div>
                                 </div>
 
                                 {/* Content Card */}

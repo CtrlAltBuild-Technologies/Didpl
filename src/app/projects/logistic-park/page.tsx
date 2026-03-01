@@ -9,10 +9,10 @@ import { MOCK_PLOT_DATA } from "@/data/plot-data";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Plane, TrendingUp, Truck, ShieldCheck, ArrowRight, Download, Phone, Map } from "lucide-react";
+import { Box, TrendingUp, Truck, ShieldCheck, ArrowRight, Download, Phone, Map } from "lucide-react";
 import { PlotPriceCalculator } from "@/components/projects/PlotPriceCalculator";
 
-export default function AeroTownPage() {
+export default function LogisticParkPage() {
     const [isPlotsModalOpen, setIsPlotsModalOpen] = useState(false);
 
     return (
@@ -22,7 +22,7 @@ export default function AeroTownPage() {
             <HighlightsSection />
             <LocationSection />
             <CTASection />
-            <PlotPriceCalculator projectId="aero-town" />
+            <PlotPriceCalculator projectId="logistic-park" />
 
             <Modal
                 isOpen={isPlotsModalOpen}
@@ -31,9 +31,9 @@ export default function AeroTownPage() {
             >
                 <div className="h-[80vh] w-full"> {/* Fixed height for scrolling */}
                     <PlotAvailabilityViewer
-                        projectName={MOCK_PLOT_DATA["aero-town"].name}
-                        layoutImage={MOCK_PLOT_DATA["aero-town"].layoutImage}
-                        plots={MOCK_PLOT_DATA["aero-town"].plots}
+                        projectName={MOCK_PLOT_DATA["logistic-park"]?.name || "Logistic Park"}
+                        layoutImage={MOCK_PLOT_DATA["logistic-park"]?.layoutImage || "/logistic_park.jpeg"}
+                        plots={MOCK_PLOT_DATA["logistic-park"]?.plots || []}
                     />
                 </div>
             </Modal>
@@ -52,8 +52,8 @@ function HeroSection({ onOpenPlots }: { onOpenPlots: () => void }) {
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
                 <Image
-                    src="/projects/aero-town-ai.png"
-                    alt="AERO Town Residency"
+                    src="/projects/logistic-park-ai.png"
+                    alt="Logistic Park"
                     fill
                     className="object-cover"
                     priority
@@ -70,30 +70,24 @@ function HeroSection({ onOpenPlots }: { onOpenPlots: () => void }) {
                     <div className="flex items-center gap-4 mb-6">
                         <span className="h-[2px] w-20 bg-[#D4AF37]" />
                         <span className="text-[#D4AF37] font-bold tracking-[0.2em] uppercase text-sm">
-                            Airport Zone
+                            Logistics Hub
                         </span>
                     </div>
 
                     <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
-                        AERO Town Residency
+                        Logistic Park
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-200 font-light mb-10 max-w-2xl">
-                        High Appreciation Plots in the <span className="text-[#D4AF37] font-medium">Logistic & Cargo Zone</span>, near Dholera International Airport.
+                        Prime industrial plots designed for <span className="text-[#D4AF37] font-medium">heavy cargo and logistics</span> operations in Dholera SIR.
                     </p>
 
                     <div className="flex flex-wrap gap-4">
-                        <a href="/Aero_town_brochure.pdf" download="Aero_Town_Residency_Brochure.pdf" target="_blank" rel="noopener noreferrer">
+                        <a href="#" target="_blank" rel="noopener noreferrer">
                             <Button className="bg-[#D4AF37] text-[#1a544e] px-8 py-4 rounded-full text-lg font-bold hover:bg-white transition-all duration-300 flex items-center gap-2">
                                 <Download size={20} /> Download Brochure
                             </Button>
                         </a>
-                        <a href="#proposal-printable-aero-town" className="block">
-                            <Button
-                                className="bg-white text-[#1a544e] px-8 py-4 rounded-full text-lg font-bold hover:bg-[#D4AF37] hover:text-[#1a544e] transition-all duration-300 flex items-center gap-2"
-                            >
-                                <Map size={20} /> Check Availability
-                            </Button>
-                        </a>
+
                         <Link href="/contact">
                             <Button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-[#1a544e] transition-all duration-300">
                                 Book Site Visit
@@ -114,23 +108,23 @@ function OverviewSection() {
                     <div className="md:w-1/2">
                         <h4 className="text-[#D4AF37] font-bold tracking-widest uppercase mb-4 text-sm">Overview</h4>
                         <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1a544e] mb-6 leading-tight">
-                            Your Gateway to <br /> <span className="italic text-[#D4AF37]">Global Connectivity</span>
+                            The Center of <br /> <span className="italic text-[#D4AF37]">Industrial Growth</span>
                         </h2>
                         <p className="text-gray-600 text-lg leading-relaxed mb-6 font-light">
-                            AERO Town Residency is strategically situated to capitalize on the immense growth potential of Dholera's International Airport. Located in the Logistic and Cargo Zone, this project is ideal for those looking for rapid appreciation driven by commercial and industrial development.
+                            Logistic Park is developed specifically to cater to the booming supply chain demand in the region. Perfectly positioned near major arterial roads, it ensures smooth operations for warehouses and cargo handlers.
                         </p>
                         <p className="text-gray-600 text-lg leading-relaxed mb-8 font-light">
-                            This is not just a residential plot; it's an investment in the future logistics hub of India.
+                            Take advantage of the immense scale of Dholera's industrial planning.
                         </p>
 
                         <div className="grid grid-cols-2 gap-8">
                             <div>
-                                <h3 className="text-3xl font-serif font-bold text-[#1a544e]">5 Min</h3>
-                                <p className="text-gray-500 text-sm uppercase tracking-wider">From Airport</p>
+                                <h3 className="text-3xl font-serif font-bold text-[#1a544e]">Prime</h3>
+                                <p className="text-gray-500 text-sm uppercase tracking-wider">Storage Node</p>
                             </div>
                             <div>
                                 <h3 className="text-3xl font-serif font-bold text-[#1a544e]">High</h3>
-                                <p className="text-gray-500 text-sm uppercase tracking-wider">ROI Potential</p>
+                                <p className="text-gray-500 text-sm uppercase tracking-wider">Connectivity</p>
                             </div>
                         </div>
                     </div>
@@ -138,8 +132,8 @@ function OverviewSection() {
                         <div className="absolute inset-0 bg-[#D4AF37] -rotate-2 rounded-[3rem] opacity-20" />
                         <div className="relative h-full w-full rounded-[3rem] overflow-hidden shadow-xl border-4 border-white">
                             <Image
-                                src="/projects/aero-town.png" // Placeholder
-                                alt="Aero Town Overview"
+                                src="/logistic_park.jpeg"
+                                alt="Logistic Park Overview"
                                 fill
                                 className="object-cover"
                             />
@@ -153,10 +147,10 @@ function OverviewSection() {
 
 function HighlightsSection() {
     const highlights = [
-        { icon: Plane, title: "Airport Zone", desc: "Located within minutes of the Dholera International Airport." },
-        { icon: TrendingUp, title: "High Appreciation", desc: "Direct benefit from the booming aviation and logistics sector." },
-        { icon: Truck, title: "Cargo Connectivity", desc: "Adjacent to wide roads planned for heavy cargo movement." },
-        { icon: ShieldCheck, title: "Gated Security", desc: "Peace of mind with full perimeter fencing and security." },
+        { icon: Truck, title: "Cargo Connectivity", desc: "Adjacent to Dholera's planned heavy cargo expressways." },
+        { icon: TrendingUp, title: "High Demand", desc: "Capitalize on the growing demand for automated warehousing." },
+        { icon: Box, title: "Industrial Scale", desc: "Plots sized to accommodate massive logistics infrastructure." },
+        { icon: ShieldCheck, title: "Secure Perimeter", desc: "Designed with security for high-value cargo storage in mind." },
     ];
 
     return (
@@ -164,7 +158,7 @@ function HighlightsSection() {
             <Container>
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1a544e] mb-4">Why Invest Here?</h2>
-                    <p className="text-gray-500 text-lg max-w-2xl mx-auto">A strategic asset in India's next major aviation hub.</p>
+                    <p className="text-gray-500 text-lg max-w-2xl mx-auto">A foundational asset for the future of India's supply chain.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -208,11 +202,11 @@ function LocationSection() {
 
                         <ul className="space-y-6">
                             {[
-                                "5 Mins from International Airport",
-                                "Direct Access to Expressway",
-                                "Near Activation Area",
-                                "Adjoining 250m Wide Expressway",
-                                "In the heart of Logistic Zone"
+                                "Strategically located in Dholera's Logistic Hub",
+                                "Direct access to dedicated freight corridors",
+                                "Proximity to industrial and manufacturing zones",
+                                "Designed for large-scale trucking accessibility",
+                                "Integrated with smart mobility networks"
                             ].map((item, i) => (
                                 <li key={i} className="flex items-center gap-4 text-lg font-light text-gray-200">
                                     <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
@@ -238,9 +232,9 @@ function CTASection() {
                     <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#D4AF37]/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" />
 
                     <div className="relative z-10 max-w-3xl mx-auto">
-                        <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">Invest in the Future of Aviation</h2>
+                        <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">Invest in Industrial Growth</h2>
                         <p className="text-xl text-gray-200 mb-10 font-light">
-                            Don't miss this opportunity to own land near one of India's most significant infrastructure projects.
+                            Don't miss the chance to own a pivotal piece in the massive Dholera logistics framework.
                         </p>
                         <div className="flex flex-col md:flex-row justify-center gap-6">
                             <Button className="bg-[#D4AF37] text-[#1a544e] px-10 py-5 rounded-full text-lg font-bold hover:bg-white hover:text-[#1a544e] transition-all duration-300">

@@ -24,7 +24,6 @@ export default function DholeraPage() {
     return (
         <main className="min-h-screen bg-white">
             <ParallaxHero />
-            <BentoStats />
             <FeatureShowcase />
             <DetailedOverview />
             <ConnectSection />
@@ -85,107 +84,6 @@ function ParallaxHero() {
     );
 }
 
-function BentoStats() {
-    return (
-        <section className="py-24 bg-white relative z-20 -mt-20">
-            <Container>
-                <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-6 h-auto md:h-[800px]">
-
-                    {/* Main Content Block (Large) */}
-                    <div className="md:col-span-2 md:row-span-2 bg-[#1a544e] rounded-[2.5rem] p-12 flex flex-col justify-between relative overflow-hidden group shadow-2xl">
-                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#D4AF37]/20 to-transparent rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-
-                        <div className="relative z-10">
-                            <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
-                                <Ship className="text-[#D4AF37]" />
-                            </div>
-                            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight">
-                                Bigger Than <br /> <span className="text-[#D4AF37] italic">Singapore</span>
-                            </h2>
-                            <p className="text-gray-400 leading-relaxed text-lg max-w-md">
-                                At 920 sq. km, Dholera SIR is a meticulously planned mega-city designed to support next-gen industries, logistics, and over 2 million residents.
-                            </p>
-                        </div>
-
-                        <div className="relative z-10 pt-8 border-t border-white/10 mt-8 flex justify-between items-end">
-                            <div>
-                                <p className="text-white/50 text-sm uppercase tracking-wider mb-1">Total Investment</p>
-                                <p className="text-3xl font-bold text-white">₹ Trillions</p>
-                            </div>
-                            <div className="bg-[#D4AF37] p-3 rounded-full text-[#1a544e] group-hover:rotate-45 transition-transform duration-300">
-                                <ArrowUpRight />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Stat Card 1 (Vertical) */}
-                    <div className="md:col-span-1 md:row-span-2 bg-[#F3F4F6] rounded-[2.5rem] p-8 flex flex-col relative group overflow-hidden hover:bg-[#D4AF37] transition-colors duration-500">
-                        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5" />
-                        <div className="mt-auto relative z-10">
-                            <h3 className="text-6xl font-bold text-[#1a544e] mb-2 group-hover:text-white transition-colors">920</h3>
-                            <p className="text-gray-500 font-medium uppercase tracking-wider text-sm group-hover:text-[#1a544e] transition-colors">Square Kilometers</p>
-                        </div>
-                        <Map className="absolute top-8 right-8 w-12 h-12 text-[#1a544e]/10 group-hover:text-white/20 transition-colors" />
-                    </div>
-
-                    {/* Image Card (Square) */}
-                    <div className="md:col-span-1 md:row-span-1 relative rounded-[2.5rem] overflow-hidden group">
-                        <Image
-                            src="/hero.png" // Fallback
-                            alt="Connectivity"
-                            fill
-                            className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
-                        />
-                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-                        <div className="absolute bottom-6 left-6 text-white z-10">
-                            <p className="font-bold">Global Connectivity</p>
-                        </div>
-                    </div>
-
-                    {/* Stat Card 2 (Square) */}
-                    <div className="md:col-span-1 md:row-span-1 bg-white border border-gray-100 shadow-lg rounded-[2.5rem] p-8 flex flex-col justify-center relative overflow-hidden">
-                        <div className="absolute -right-4 -top-4 w-24 h-24 bg-[#1a544e]/5 rounded-full blur-xl" />
-                        <h3 className="text-5xl font-bold text-[#1a544e] mb-1">2M+</h3>
-                        <p className="text-gray-500 font-serif italic">Projected Population</p>
-                    </div>
-
-                    {/* Wide Feature Block */}
-                    <div className="md:col-span-2 md:row-span-1 bg-[#1a544e] rounded-[2.5rem] p-8 flex items-center justify-between relative overflow-hidden group">
-                        <div className="absolute inset-0 bg-[#D4AF37] translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-
-                        <div className="relative z-10 flex items-center gap-6">
-                            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-[#1a544e]/10 transition-colors">
-                                <Plane className="w-8 h-8 text-white group-hover:text-[#1a544e] transition-colors" />
-                            </div>
-                            <div>
-                                <h3 className="text-2xl font-bold text-white group-hover:text-[#1a544e] transition-colors">International Airport</h3>
-                                <p className="text-white/60 group-hover:text-[#1a544e]/70 transition-colors">Cargo & Passenger Hub</p>
-                            </div>
-                        </div>
-
-                        <ArrowUpRight className="w-8 h-8 text-white relative z-10 group-hover:text-[#1a544e] transition-colors group-hover:rotate-45 transform duration-300" />
-                    </div>
-
-                    {/* Smart City Block */}
-                    <div className="md:col-span-2 md:row-span-1 bg-[#FDFBF7] rounded-[2.5rem] p-8 border border-[#D4AF37]/20 flex flex-col justify-center relative overflow-hidden">
-                        <div className="absolute right-0 bottom-0 opacity-10">
-                            <Wifi size={120} />
-                        </div>
-                        <h3 className="text-2xl font-serif font-bold text-[#1a544e] mb-2">Smart Infrastructure</h3>
-                        <div className="flex gap-3">
-                            {["ICT", "SCADA", "Sensors"].map((tag) => (
-                                <span key={tag} className="bg-white border border-gray-200 px-3 py-1 rounded-full text-xs font-bold text-gray-500 uppercase tracking-wider">
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-
-                </div>
-            </Container>
-        </section>
-    );
-}
 
 function FeatureShowcase() {
     const features = [
@@ -481,25 +379,25 @@ function DetailedOverview() {
                     </div>
                 </div>
 
-                {/* Useful Links */}
+                {/* Useful Links & References */}
                 <div className="border-t border-gray-100 pt-16">
                     <h3 className="text-2xl font-serif font-bold text-[#1a544e] mb-8 text-center flex items-center justify-center gap-2">
                         🔗 Key Resources & Official Links
                     </h3>
-                    <div className="grid md:grid-cols-3 gap-6">
+                    <div className="grid md:grid-cols-3 gap-6 mb-12">
                         <div className="bg-gray-50 p-6 rounded-2xl">
                             <h4 className="font-bold text-[#1a544e] mb-4">✅ Government Sources</h4>
                             <ul className="space-y-3 text-sm">
-                                <li><a href="#" className="text-gray-600 hover:text-[#1a544e] hover:underline">Dholera SIR Official Website</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-[#1a544e] hover:underline">DMIC Official Website</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-[#1a544e] hover:underline">Gujarat Govt Urban Dev</a></li>
+                                <li><a href="https://dholera.gujarat.gov.in/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#1a544e] hover:underline">Dholera SIR Official Website</a></li>
+                                <li><a href="https://nicdc.in/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#1a544e] hover:underline">NICDC (DMIC) Official Website</a></li>
+                                <li><a href="https://udd.gujarat.gov.in/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#1a544e] hover:underline">Gujarat Govt Urban Dev</a></li>
                             </ul>
                         </div>
                         <div className="bg-gray-50 p-6 rounded-2xl">
                             <h4 className="font-bold text-[#1a544e] mb-4">✅ Infrastructure</h4>
                             <ul className="space-y-3 text-sm">
-                                <li><a href="#" className="text-gray-600 hover:text-[#1a544e] hover:underline">Expressway Updates</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-[#1a544e] hover:underline">Airport Project Status</a></li>
+                                <li><a href="https://nhai.gov.in/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#1a544e] hover:underline">NHAI - Expressway Updates</a></li>
+                                <li><a href="https://www.aai.aero/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#1a544e] hover:underline">AAI - Airport Project Status</a></li>
                             </ul>
                         </div>
                         <div className="bg-gray-50 p-6 rounded-2xl">
@@ -509,6 +407,17 @@ function DetailedOverview() {
                                 <li><Link href="/projects" className="text-gray-600 hover:text-[#1a544e] hover:underline">Industrial Plots & Townships</Link></li>
                             </ul>
                         </div>
+                    </div>
+
+                    {/* References Section */}
+                    <div className="border-t border-gray-100 pt-8 mt-8">
+                        <h4 className="text-lg font-serif font-bold text-[#1a544e] mb-4">References</h4>
+                        <ol className="list-decimal pl-5 space-y-2 text-xs text-gray-500">
+                            <li>Government of Gujarat, <span className="italic">"Dholera Special Investment Region (SIR) Overview"</span>. Official regional development metrics and planning limits.</li>
+                            <li>Delhi Mumbai Industrial Corridor Development Corporation (DMICDC), Node No. 1: <span className="italic">"Dholera Smart City"</span>. Development stages and infrastructural allocation.</li>
+                            <li>National Highway Authority of India (NHAI), <span className="italic">"Ahmedabad-Dholera Expressway Project Status"</span>. Road connectivity framework.</li>
+                            <li>Airports Authority of India (AAI), <span className="italic">"Dholera International Airport Hub Planning"</span>. Aviation layout and passenger/cargo capacity estimations.</li>
+                        </ol>
                     </div>
                 </div>
 

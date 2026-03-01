@@ -20,6 +20,7 @@ const navigation = [
             { name: "Aero Town Residency", href: "/projects/aero-town" },
             { name: "Dholera Homes 3", href: "/projects/dholera-homes-3" },
             { name: "Dholera IndusPark", href: "/projects/dholera-induspark" },
+            { name: "Logistic Park", href: "/projects/logistic-park" },
         ]
     },
     { name: "Our Team", href: "/team" },

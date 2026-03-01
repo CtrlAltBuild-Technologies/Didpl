@@ -52,7 +52,7 @@ function HeroSection({ onOpenPlots }: { onOpenPlots: () => void }) {
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
                 <Image
-                    src="/projects/dholera-homes-3.png" // Ensure this image exists, or use a placeholder
+                    src="/projects/dholera-homes-3-ai.png"
                     alt="Dholera Homes 3"
                     fill
                     className="object-cover"
@@ -87,12 +87,13 @@ function HeroSection({ onOpenPlots }: { onOpenPlots: () => void }) {
                                 <Download size={20} /> Download Brochure
                             </Button>
                         </a>
-                        <Button
-                            onClick={onOpenPlots}
-                            className="bg-white text-[#1a544e] px-8 py-4 rounded-full text-lg font-bold hover:bg-[#D4AF37] hover:text-[#1a544e] transition-all duration-300 flex items-center gap-2"
-                        >
-                            <Map size={20} /> Check Availability
-                        </Button>
+                        <a href="#proposal-printable-dholera-homes-3" className="block">
+                            <Button
+                                className="bg-white text-[#1a544e] px-8 py-4 rounded-full text-lg font-bold hover:bg-[#D4AF37] hover:text-[#1a544e] transition-all duration-300 flex items-center gap-2"
+                            >
+                                <Map size={20} /> Check Availability
+                            </Button>
+                        </a>
                         <Link href="/contact">
                             <Button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-[#1a544e] transition-all duration-300">
                                 Book Site Visit

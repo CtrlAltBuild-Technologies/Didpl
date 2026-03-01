@@ -25,5 +25,14 @@ export const projects = [
         image: "/projects/aero-town.png",
         features: ["Airport Zone", "High Appreciation", "Gated Community"],
         status: "Selling Fast"
+    },
+    {
+        id: "logistic-park",
+        title: "Logistic Park",
+        location: "Dholera SIR",
+        logo: "/logistic_park.jpeg",
+        image: "/logistic_park.jpeg",
+        features: ["Prime Location", "Logistics Hub", "High Investment Potential"],
+        status: "Upcoming"
     }
 ];
