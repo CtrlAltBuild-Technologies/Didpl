@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { Facebook, Instagram, Linkedin, Twitter, MapPin, Phone, Mail, ChevronRight } from "lucide-react";
+import { Facebook, Instagram, MessageCircle, MapPin, Phone, Mail, ChevronRight } from "lucide-react";
 import { PROJECTS } from "@/data/proposal-data";
 
 export function Footer() {
@@ -25,13 +25,19 @@ export function Footer() {
                             Dholera Infra Development Pvt. Ltd. is your trusted partner for premium land investments in Dholera SIR. Building dreams with transparency and trust.
                         </p>
                         <div className="flex gap-4 pt-2">
-                            {[Instagram, Facebook, Linkedin, Twitter].map((Icon, i) => (
+                            {[
+                                { Icon: Instagram, href: "https://www.instagram.com/dholera_didpl/" },
+                                { Icon: Facebook, href: "https://www.facebook.com/dholerainfradevelopment/" },
+                                { Icon: MessageCircle, href: "https://api.whatsapp.com/send/?phone=918866909600&text&type=phone_number&app_absent=0" }
+                            ].map((social, i) => (
                                 <a
                                     key={i}
-                                    href="#"
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-accent hover:text-white transition-all text-primary"
                                 >
-                                    <Icon size={18} />
+                                    <social.Icon size={18} />
                                 </a>
                             ))}
                         </div>
@@ -40,7 +46,7 @@ export function Footer() {
                     {/* Quick Links */}
                     <div>
                         <h4 className="text-lg font-semibold mb-6 flex items-center gap-2">
-                            <span className="w-8 h-[2px] bg-accent"></span> Quick Links
+                            <span className="w-8 h-0.5 bg-accent"></span> Quick Links
                         </h4>
                         <ul className="space-y-3">
                             {[
@@ -66,7 +72,7 @@ export function Footer() {
                     {/* Our Projects */}
                     <div>
                         <h4 className="text-lg font-semibold mb-6 flex items-center gap-2">
-                            <span className="w-8 h-[2px] bg-accent"></span> Projects
+                            <span className="w-8 h-0.5 bg-accent"></span> Projects
                         </h4>
                         <ul className="space-y-3">
                             {PROJECTS.map((project) => (
@@ -86,7 +92,7 @@ export function Footer() {
                     {/* Contact Info */}
                     <div>
                         <h4 className="text-lg font-semibold mb-6 flex items-center gap-2">
-                            <span className="w-8 h-[2px] bg-accent"></span> Contact Us
+                            <span className="w-8 h-0.5 bg-accent"></span> Contact Us
                         </h4>
                         <ul className="space-y-4 text-gray-600">
                             <li className="flex items-start gap-3">
