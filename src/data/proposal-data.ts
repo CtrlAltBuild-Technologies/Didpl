@@ -66,7 +66,7 @@ const aeroPlotsRaw: [string, number][] = [
     ["126", 98], ["127", 85],
 ];
 
-// ─── Dholera Homes 3  (₹7,499/sqyd  |  ₹833/sqft) ──────────────────────────
+// ─── Dholera Homes 3  (₹7,999/sqyd  |  ₹888/sqft) ──────────────────────────
 const DH3_RATE_YD = 7999;
 const DH3_RATE_FT = 888;
 const dh3PlotsRaw: [string, number][] = [
@@ -114,8 +114,8 @@ const dh3PlotsRaw: [string, number][] = [
     ["288", 86.91], ["289", 86.91], ["290", 86.91], ["291", 86.91], ["292", 86.91], ["293", 86.91], ["294", 374.02],
     ["295", 279.34], ["296", 78.97], ["297", 123.45], ["298", 126.94], ["299", 84.34], ["300", 86.51], ["301", 87.98],
     ["302", 89.44], ["303", 90.94], ["304", 92.44], ["305", 93.93], ["306", 95.43], ["307", 96.93], ["308", 150.88],
-    ["309", 154.42], ["310", 103.03], ["311", 104.45], ["312", 105.92], ["313", 107.4], ["314", 108.91], ["315", 110.41],
-    ["316", 111.89], ["317", 113.4], ["318", 114.9], ["319", 199.03],
+    ["309", 154.42], ["310", 103.03], ["311", 104.45], ["312", 105.92], ["313", 107.40], ["314", 108.91], ["315", 110.41],
+    ["316", 111.89], ["317", 113.40], ["318", 114.90], ["319", 199.03],
 ];
 
 export const PROJECTS: ProjectProposal[] = [
@@ -134,8 +134,15 @@ export const PROJECTS: ProjectProposal[] = [
         plots: dh3PlotsRaw.map(([n, a]) => p(n, a, DH3_RATE_YD, DH3_RATE_FT)),
     },
     {
+        id: "logistic-park",
+        name: "Dholera Logistic Park",
+        subtitle: "Dholera SIR Logistics Zone",
+        logo: "/Dholera_logo.svg",
+        plots: Array.from({ length: 25 }, (_, i) => p(String(i + 1), 500, 9999, 1111)),
+    },
+    {
         id: "induspark",
-        name: "Induspark",
+        name: "Dholera Induspark",
         subtitle: "Dholera SIR Industrial Zone",
         logo: "/Dholera_logo.svg",
         plots: Array.from({ length: 25 }, (_, i) => p(String(i + 1), 500, 9999, 1111)),

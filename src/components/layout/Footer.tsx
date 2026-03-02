@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Facebook, Instagram, Linkedin, Twitter, MapPin, Phone, Mail, ChevronRight } from "lucide-react";
+import { PROJECTS } from "@/data/proposal-data";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
@@ -68,20 +69,14 @@ export function Footer() {
                             <span className="w-8 h-[2px] bg-accent"></span> Projects
                         </h4>
                         <ul className="space-y-3">
-                            {[
-                                "Dholera Homes",
-                                "Aero Town Residency",
-                                "Inside SIR Project",
-                                "Residential Plots",
-                                "Commercial Zone",
-                            ].map((item) => (
-                                <li key={item}>
+                            {PROJECTS.map((project) => (
+                                <li key={project.id}>
                                     <Link
                                         href="/projects"
                                         className="text-gray-600 hover:text-accent transition-colors flex items-center gap-2 group"
                                     >
                                         <ChevronRight size={14} className="text-accent group-hover:translate-x-1 transition-transform" />
-                                        {item}
+                                        {project.name}
                                     </Link>
                                 </li>
                             ))}

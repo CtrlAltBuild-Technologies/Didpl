@@ -48,7 +48,7 @@ export function PlotPriceCalculator({ projectId }: PlotPriceCalculatorProps) {
         }
         const subject = encodeURIComponent(`Plot Price - ${project.name}`);
         const body = encodeURIComponent(
-            `Dear ${name || "Sir/Madam"},\n\nPlease find your Plot Price details below:\n\nProject: ${project.name}\nPlot No: ${selectedPlotNo || "N/A"}\nArea: ${selectedPlot?.area_sq_yard || "-"} Sq. Yard / ${selectedPlot?.area_sq_feet || "-"} Sq. Feet\nTotal Payment: ₹${totalPayment.toLocaleString("en-IN")}\n\nThank you,\n${company.name}`
+            `Dear ${name || "Sir/Madam"},\n\nPlease find your Plot Price details below:\n\nProject: ${project.name}\nPlot No: ${selectedPlotNo || "N/A"}\nArea: ${selectedPlot?.area_sq_yard || "-"} Sq. Yard\nTotal Payment: ₹${totalPayment.toLocaleString("en-IN")}\n\nThank you,\n${company.name}`
         );
         window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
     };
@@ -291,19 +291,13 @@ export function PlotPriceCalculator({ projectId }: PlotPriceCalculatorProps) {
                                     <thead>
                                         <tr>
                                             <td className={`${lbl} w-32`} rowSpan={2}>Plot Area</td>
-                                            <td className="border border-gray-300 px-3 py-1 text-center text-xs font-semibold text-gray-500 bg-gray-50 w-1/2">
+                                            <td className="border border-gray-300 px-3 py-1 text-center text-xs font-semibold text-gray-500 bg-gray-50">
                                                 Sq. Yard
-                                            </td>
-                                            <td className="border border-gray-300 px-3 py-1 text-center text-xs font-semibold text-gray-500 bg-gray-50 w-1/2">
-                                                Sq. Feet
                                             </td>
                                         </tr>
                                         <tr>
                                             <td className="border border-gray-300 px-3 py-1.5 text-center text-sm font-semibold text-gray-800">
                                                 {selectedPlot ? selectedPlot.area_sq_yard : ""}
-                                            </td>
-                                            <td className="border border-gray-300 px-3 py-1.5 text-center text-sm font-semibold text-gray-800">
-                                                {selectedPlot ? selectedPlot.area_sq_feet : ""}
                                             </td>
                                         </tr>
                                     </thead>
@@ -314,19 +308,13 @@ export function PlotPriceCalculator({ projectId }: PlotPriceCalculatorProps) {
                                     <thead>
                                         <tr>
                                             <td className={`${lbl} w-32`} rowSpan={2}>Price</td>
-                                            <td className="border border-gray-300 px-3 py-1 text-center text-xs font-semibold text-gray-500 bg-gray-50 w-1/2">
+                                            <td className="border border-gray-300 px-3 py-1 text-center text-xs font-semibold text-gray-500 bg-gray-50">
                                                 per sq. yard
-                                            </td>
-                                            <td className="border border-gray-300 px-3 py-1 text-center text-xs font-semibold text-gray-500 bg-gray-50 w-1/2">
-                                                per sq. Feet
                                             </td>
                                         </tr>
                                         <tr>
                                             <td className="border border-gray-300 px-3 py-1.5 text-center text-sm font-bold text-[#1a544e]">
                                                 {selectedPlot ? selectedPlot.rate_per_sq_yard.toLocaleString("en-IN") : ""}
-                                            </td>
-                                            <td className="border border-gray-300 px-3 py-1.5 text-center text-sm font-bold text-[#1a544e]">
-                                                {selectedPlot ? selectedPlot.rate_per_sq_feet.toLocaleString("en-IN") : ""}
                                             </td>
                                         </tr>
                                     </thead>
