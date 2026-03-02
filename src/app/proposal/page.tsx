@@ -74,18 +74,60 @@ export default function ProposalPage() {
         <>
             {/* Print styles */}
             <style jsx global>{`
-        @media print {
-          body * { visibility: hidden; }
-          #proposal-printable,
-          #proposal-printable * { visibility: visible; }
-          #proposal-printable {
-            position: absolute;
-            left: 0; top: 0;
-            width: 100%;
-          }
-          .no-print { display: none !important; }
-        }
-      `}</style>
+                @media print {
+                    @page {
+                        size: A4;
+                        margin: 10mm;
+                    }
+                    
+                    /* Reset everything */
+                    html, body {
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        height: auto !important;
+                        overflow: visible !important;
+                    }
+
+                    /* Hide basic containers that envelope everything */
+                    header, footer, nav, .no-print, section:not(.printable-parent) {
+                        display: none !important;
+                    }
+
+                    /* Ensure the main container is visible and takes up space */
+                    #proposal-printable {
+                        display: block !important;
+                        visibility: visible !important;
+                        position: relative !important;
+                        width: 100% !important;
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        background: white !important;
+                        box-shadow: none !important;
+                    }
+
+                    /* Force all children to be visible */
+                    #proposal-printable * {
+                        visibility: visible !important;
+                    }
+
+                    /* Restore table layouts specifically */
+                    #proposal-printable table { display: table !important; width: 100% !important; }
+                    #proposal-printable tr { display: table-row !important; }
+                    #proposal-printable td, #proposal-printable th { display: table-cell !important; }
+                    
+                    /* Hide inputs/selects borders */
+                    #proposal-printable input, #proposal-printable select {
+                        border: none !important;
+                        background: transparent !important;
+                        -webkit-appearance: none !important;
+                    }
+
+                    /* Prevent multi-page generation */
+                    #proposal-printable {
+                        page-break-after: avoid !important;
+                    }
+                }
+            `}</style>
 
             <div className="min-h-screen bg-gradient-to-br from-slate-100 via-gray-50 to-slate-200 py-10 px-4">
 

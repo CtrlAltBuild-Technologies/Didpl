@@ -60,6 +60,64 @@ export function PlotPriceCalculator({ projectId }: PlotPriceCalculatorProps) {
     const inp = "w-full bg-white border-0 outline-none text-sm px-1 py-0.5";
 
     return (
+        <>
+            {/* Print styles */}
+            <style jsx global>{`
+                @media print {
+                    @page {
+                        size: A4;
+                        margin: 10mm;
+                    }
+                    
+                    /* Reset everything */
+                    html, body {
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        height: auto !important;
+                        overflow: visible !important;
+                    }
+
+                    /* Hide basic containers that envelope everything */
+                    header, footer, nav, .no-print, section:not(.printable-parent) {
+                        display: none !important;
+                    }
+
+                    /* Ensure the main container is visible and takes up space */
+                    #proposal-printable-${projectId} {
+                        display: block !important;
+                        visibility: visible !important;
+                        position: relative !important;
+                        width: 100% !important;
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        background: white !important;
+                        box-shadow: none !important;
+                    }
+
+                    /* Force all children to be visible */
+                    #proposal-printable-${projectId} * {
+                        visibility: visible !important;
+                        display: inherit;
+                    }
+
+                    /* Restore table layouts specifically */
+                    #proposal-printable-${projectId} table { display: table !important; width: 100% !important; }
+                    #proposal-printable-${projectId} tr { display: table-row !important; }
+                    #proposal-printable-${projectId} td, #proposal-printable-${projectId} th { display: table-cell !important; }
+                    
+                    /* Hide inputs/selects borders */
+                    #proposal-printable-${projectId} input, #proposal-printable-${projectId} select {
+                        border: none !important;
+                        background: transparent !important;
+                        -webkit-appearance: none !important;
+                    }
+
+                    /* Prevent multi-page generation */
+                    #proposal-printable-${projectId} {
+                        page-break-after: avoid !important;
+                    }
+                }
+            `}</style>
         <section className="py-20 bg-gradient-to-br from-slate-100 via-gray-50 to-slate-200">
             <div className="max-w-5xl mx-auto px-4">
 
@@ -158,7 +216,7 @@ export function PlotPriceCalculator({ projectId }: PlotPriceCalculatorProps) {
                             {/* Header Banner */}
                             <div className="bg-[#6a0dad] text-white text-center py-3">
                                 <h3 className="text-xl font-bold tracking-widest uppercase">
-                                    Plot Price Calculation
+                                    Plot Price
                                 </h3>
                             </div>
 
@@ -382,16 +440,6 @@ export function PlotPriceCalculator({ projectId }: PlotPriceCalculatorProps) {
                                 {/* Action Buttons */}
                                 <div className="flex items-center justify-center gap-3 mb-5 no-print">
                                     <button
-                                        id={`${projectId}-send-email-btn`}
-                                        onClick={handleSendEmail}
-                                        className="flex items-center gap-2 bg-[#1a544e] hover:bg-[#257a70] text-white font-semibold px-5 py-2 rounded-full text-xs transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
-                                    >
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                        </svg>
-                                        SEND EMAIL
-                                    </button>
-                                    <button
                                         id={`${projectId}-create-pdf-btn`}
                                         onClick={handlePrint}
                                         className="flex items-center gap-2 bg-[#c0392b] hover:bg-[#e74c3c] text-white font-semibold px-5 py-2 rounded-full text-xs transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
@@ -441,5 +489,6 @@ export function PlotPriceCalculator({ projectId }: PlotPriceCalculatorProps) {
                 </div>
             </div>
         </section>
+        </>
     );
 }
