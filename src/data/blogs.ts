@@ -20,7 +20,7 @@ export const blogs: BlogPost[] = [
         excerpt: "Discover the unparalleled infrastructure, government backing, and immense growth potential that makes Dholera the prime destination for real estate investment.",
         content: `
       <h2>The Greenfield Smart City Vision</h2>
-      <p>Dholera Special Investment Region (SIR) is slated to be India's largest greenfield smart city, boasting world-class infrastructure and massive government initiatives. With the strategic Delhi-Mumbai Industrial Corridor passing through it, the connectivity and logistical advantages are unmatched.</p>
+      <p>Dholera Special Investment Region (SIR) is slated to be India's largest greenfield smart city, boasting world class infrastructure and massive government initiatives. With the strategic Delhi to Mumbai Industrial Corridor passing through it, the connectivity and logistical advantages are unmatched.</p>
       
       <h2>Infrastructure That Stands Apart</h2>
       <p>From a dedicated international airport to expressways and metro rail connectivity, Dholera is being built from the ground up to support massive industrial and residential populations. Power, water, and gas networks are fully underground and managed by smart grids.</p>
@@ -48,7 +48,7 @@ export const blogs: BlogPost[] = [
       <p>Dholera's development is structured through carefully drafted Town Planning (TP) schemes. TP1 to TP6 cover residential, industrial, and commercial zones, ensuring organized growth without the clutter seen in older cities.</p>
 
       <h2>Future Phases</h2>
-      <p>Subsequent phases will expand the city's footprint, adding more specialized zones including logistics parks, solar parks, and recreational areas. The long-term vision spans several decades of sustained growth.</p>
+      <p>Subsequent phases will expand the city's footprint, adding more specialized zones including logistics parks, solar parks, and recreational areas. The long term vision spans several decades of sustained growth.</p>
     `,
         date: "2024-04-02",
         author: "DIDPL Urban Planning Team",

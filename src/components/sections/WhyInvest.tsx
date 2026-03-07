@@ -27,7 +27,7 @@ const features = [
     },
     {
         icon: Maximize,
-        title: "1.5x Size of Singapore",
+        title: "1.5x",
         description: "To be developed at 1.5x times the size of Singapore and approx the size of Shenzhen."
     },
     {
@@ -62,7 +62,7 @@ export function WhyInvest() {
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-serif font-bold text-[#1a544e] mb-4"
                     >
-                        Dholera ?
+                        India's Planned Smart City ?
                     </motion.h2>
                 </div>
 

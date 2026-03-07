@@ -78,7 +78,7 @@ function HeroSection({ onOpenPlots }: { onOpenPlots: () => void }) {
                         Dholera Homes 3
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-200 font-light mb-10 max-w-2xl">
-                        Premium Residential Plots in <span className="text-[#D4AF37] font-medium">TP-2 West-B</span>, adjacent to the High Access Corridor.
+                        Premium Residential Plots in <span className="text-[#D4AF37] font-medium">TP 2 West B</span>, adjacent to the High Access Corridor.
                     </p>
 
                     <div className="flex flex-wrap gap-4">
@@ -117,7 +117,7 @@ function OverviewSection() {
                             The Smart Choice for <br /> <span className="italic text-[#D4AF37]">Smart Living</span>
                         </h2>
                         <p className="text-gray-600 text-lg leading-relaxed mb-6 font-light">
-                            Dholera Homes 3 offers a strategic opportunity to invest in one of the most promising residential zones of Dholera SIR. Located in TP-2 West-B, this project is perfectly positioned for rapid appreciation and high rental yields.
+                            Dholera Homes 3 offers a strategic opportunity to invest in one of the most promising residential zones of Dholera SIR. Located in TP 2 West B, this project is perfectly positioned for rapid appreciation and high rental yields.
                         </p>
                         <p className="text-gray-600 text-lg leading-relaxed mb-8 font-light">
                             With direct connectivity to the High Access Corridor and proximity to the proposed Metro route, Dholera Homes 3 combines convenience with the promise of a premium lifestyle.
@@ -155,7 +155,7 @@ function HighlightsSection() {
     const highlights = [
         { icon: Train, title: "Next to Metro", desc: "Located on the proposed Metro route for unbeatable connectivity." },
         { icon: Warehouse, title: "High Access Corridor", desc: "Direct access to 25m wide High Access Corridor roads." },
-        { icon: MapPin, title: "Prime Location", desc: "Situated in the highly coveted Residential Zone of TP-2 West-B." },
+        { icon: MapPin, title: "Prime Location", desc: "Situated in the highly coveted Residential Zone of TP 2 West B." },
         { icon: ShieldCheck, title: "Secure Community", desc: "Gated community features with 24/7 security provision." },
     ];
 

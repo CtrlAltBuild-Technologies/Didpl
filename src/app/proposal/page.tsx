@@ -9,6 +9,7 @@ import {
     ProjectProposal,
     PlotOption,
 } from "@/data/proposal-data";
+import { Phone, Mail, Globe } from "lucide-react";
 
 export default function ProposalPage() {
     const [name, setName] = useState("");
@@ -168,9 +169,9 @@ export default function ProposalPage() {
                             <div className="text-xs text-gray-600 leading-relaxed">
                                 <p className="font-bold text-sm text-gray-800">{company.name}</p>
                                 <p>{company.address}</p>
-                                <p>📞 {company.phone}</p>
-                                <p>✉ {company.email}</p>
-                                <p>🌐 {company.website}</p>
+                                <p className="flex items-center gap-1"><Phone size={12} /> {company.phone}</p>
+                                <p className="flex items-center gap-1"><Mail size={12} /> {company.email}</p>
+                                <p className="flex items-center gap-1"><Globe size={12} /> {company.website}</p>
                             </div>
                         </div>
 
@@ -376,7 +377,7 @@ export default function ProposalPage() {
                                             className="border border-gray-300 px-3 py-2 font-semibold text-sm text-gray-700 bg-[#f9f9f9] w-28 text-center"
                                             rowSpan={2}
                                         >
-                                            Option-1
+                                            Option 1
                                         </td>
                                         <td className="border border-gray-300 px-3 py-2 text-sm text-gray-700 w-52">
                                             Down Payment ({payment.fullPayment.downPaymentPercent}%)

@@ -58,7 +58,7 @@ function ContactDetailsSection() {
                                 <InfoCard
                                     icon={Clock}
                                     title="Working Hours"
-                                    content="9:00 AM - 7:00 PM"
+                                    content="10:00 AM to 6:00 PM"
                                 />
                                 <InfoCard
                                     icon={Globe}
@@ -157,7 +157,7 @@ function MapSection() {
     return (
         <section className="h-[500px] w-full relative bg-[#FAFAFA] grayscale-[30%] hover:grayscale-0 transition-all duration-1000">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.9213876611467!2d72.4815!3d23.0257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b0bff79af77%3A0xaf8e8eb8a6a66344!2sDholeraPro-Dholera%20Smart%20City%20Plot!5e0!3m2!1sen!2sin!4v1770581195722!5m2!1sen!2sin"
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Dholera%20Infra%20Development%20Pvt.%20Ltd.%20309,%203rd%20Floor,%20Siddharth%20Annexe%202,%20Above%20Mirch%20Masala%20Restaurant,%20Sama-Savali%20Road,%20Vadodara%20%E2%80%93%20391740,%20Gujarat+(DIDPL)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

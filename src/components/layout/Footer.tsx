@@ -98,7 +98,7 @@ export function Footer() {
                             <li className="flex items-start gap-3">
                                 <MapPin className="text-accent mt-1 shrink-0" size={18} />
                                 <span className="text-sm">
-                                    Dholera Infra Development Pvt. Ltd. 309, 3rd Floor, Siddharth Annexe 2, Above Mirch Masala Restaurant, Sama-Savali Road, Vadodara – 391740, Gujarat (IN)
+                                    Dholera Infra Development Pvt. Ltd. 309, 3rd Floor, Siddharth Annexe 2, Above Mirch Masala Restaurant, Sama to Savali Road, Vadodara – 391740, Gujarat (IN)
                                 </span>
                             </li>
                             <li className="flex items-center gap-3">

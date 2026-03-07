@@ -17,7 +17,13 @@ import {
     Ship,
     ArrowUpRight,
     Map,
-    MapPin
+    MapPin,
+    Building2,
+    Factory,
+    Rocket,
+    Home,
+    Link as LinkIcon,
+    CheckCircle2
 } from "lucide-react";
 
 export default function DholeraPage() {
@@ -69,7 +75,7 @@ function ParallaxHero() {
                         <span className="text-sm font-medium tracking-widest uppercase text-white/80">Vision 2030</span>
                     </div>
                     <p className="text-xl md:text-2xl text-gray-300 font-light max-w-2xl mx-auto leading-relaxed mb-10">
-                        India's first platinum-rated greenfield smart city. <br /> A global manufacturing hub in the making.
+                        India's first platinum rated greenfield smart city. <br /> A global manufacturing hub in the making.
                     </p>
                     <div className="flex justify-center gap-4">
                         <Button className="bg-[#D4AF37] text-[#1a544e] hover:bg-white rounded-full px-8 py-6 text-lg font-bold">
@@ -97,7 +103,7 @@ function FeatureShowcase() {
         <section className="py-24 bg-white border-t border-gray-100">
             <Container>
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-serif font-bold text-[#1a544e]">Future-Ready Ecosystem</h2>
+                    <h2 className="text-4xl font-serif font-bold text-[#1a544e]">Future Ready Ecosystem</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {features.map((feature, idx) => (
@@ -150,10 +156,10 @@ function DetailedOverview() {
                         India’s Upcoming <br /><span className="text-[#D4AF37]">Smart City & Industrial Hub</span>
                     </h2>
                     <p className="text-lg text-gray-600 leading-relaxed font-light mb-8">
-                        Dholera SIR (Special Investment Region) is one of India’s most ambitious greenfield smart city projects, planned under the Delhi–Mumbai Industrial Corridor (DMIC). Located in Gujarat, Dholera is designed as a next-generation urban and industrial zone with world-class infrastructure, high-speed connectivity, and sustainable development.
+                        Dholera SIR (Special Investment Region) is one of India’s most ambitious greenfield smart city projects, planned under the Delhi to Mumbai Industrial Corridor (DMIC). Located in Gujarat, Dholera is designed as a next generation urban and industrial zone with world class infrastructure, high speed connectivity, and sustainable development.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed font-light">
-                        With modern planning, large-scale industrial opportunities, and smart city facilities, Dholera SIR is becoming a key destination for investors, businesses, and future residents.
+                        With modern planning, large scale industrial opportunities, and smart city facilities, Dholera SIR is becoming a key destination for investors, businesses, and future residents.
                     </p>
                     <div className="mt-12 relative rounded-[2.5rem] overflow-hidden aspect-video shadow-2xl">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10" />
@@ -219,7 +225,7 @@ function DetailedOverview() {
                             "Renewable energy infrastructure"
                         ].map((item, i) => (
                             <div key={i} className="bg-white p-6 rounded-2xl shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
-                                <span className="text-2xl">🏗️</span>
+                                <Building2 size={24} className="text-[#1a544e]" />
                                 <span className="text-[#1a544e] font-medium">{item}</span>
                             </div>
                         ))}
@@ -255,7 +261,7 @@ function DetailedOverview() {
                             <ul className="space-y-2 text-gray-600 text-sm">
                                 <li>• Solar energy integration</li>
                                 <li>• Large green belts and parks</li>
-                                <li>• Eco-friendly zoning</li>
+                                <li>• Eco friendly zoning</li>
                                 <li>• Renewable energy focus</li>
                             </ul>
                         </div>
@@ -304,7 +310,7 @@ function DetailedOverview() {
                             ].map((item, i) => (
                                 <li key={i} className="flex items-center gap-4 p-3 bg-gray-50 rounded-xl">
                                     <div className="w-8 h-8 bg-[#D4AF37]/20 rounded-full flex items-center justify-center text-[#1a544e] font-bold shrink-0">
-                                        🏭
+                                        <Factory size={16} />
                                     </div>
                                     <span className="text-gray-700 font-medium">{item}</span>
                                 </li>
@@ -318,7 +324,9 @@ function DetailedOverview() {
 
                 {/* Upcoming Developments */}
                 <div>
-                    <h3 className="text-3xl font-serif font-bold text-[#1a544e] mb-10 text-center">🚀 Upcoming Developments</h3>
+                    <h3 className="text-3xl font-serif font-bold text-[#1a544e] mb-10 text-center flex items-center justify-center gap-3">
+                        <Rocket className="text-[#D4AF37]" size={28} /> Upcoming Developments
+                    </h3>
                     <div className="relative rounded-[2.5rem] overflow-hidden aspect-[21/9] mb-10 shadow-2xl">
                         <div className="absolute inset-0 bg-black/20 z-10" />
                         <Image
@@ -328,13 +336,13 @@ function DetailedOverview() {
                             className="object-cover"
                         />
                         <div className="absolute bottom-6 left-6 z-20 text-white bg-black/50 backdrop-blur px-6 py-3 rounded-full">
-                            <span className="font-bold">Ahmedabad–Dholera Expressway</span>
+                            <span className="font-bold">Ahmedabad to Dholera Expressway</span>
                         </div>
                     </div>
                     <div className="flex flex-wrap justify-center gap-4">
                         {[
                             "Dholera International Airport (Planned)",
-                            "Ahmedabad–Dholera Expressway",
+                            "Ahmedabad to Dholera Expressway",
                             "DMIC Connectivity Projects",
                             "Industrial Clusters & Smart Townships"
                         ].map((item, i) => (
@@ -351,7 +359,9 @@ function DetailedOverview() {
 
                     <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <h3 className="text-3xl font-serif font-bold mb-6">🏡 Future of Living</h3>
+                            <h3 className="text-3xl font-serif font-bold mb-6 flex items-center gap-3">
+                                <Home className="text-[#D4AF37]" size={28} /> Future of Living
+                            </h3>
                             <p className="text-gray-300 text-lg mb-8 leading-relaxed font-light">
                                 Dholera SIR is also being planned as a livable smart city, designed for both industries and families, offering a modern lifestyle with employment opportunities nearby.
                             </p>
@@ -382,11 +392,11 @@ function DetailedOverview() {
                 {/* Useful Links & References */}
                 <div className="border-t border-gray-100 pt-16">
                     <h3 className="text-2xl font-serif font-bold text-[#1a544e] mb-8 text-center flex items-center justify-center gap-2">
-                        🔗 Key Resources & Official Links
+                        <LinkIcon className="text-[#D4AF37]" size={24} /> Key Resources & Official Links
                     </h3>
                     <div className="grid md:grid-cols-3 gap-6 mb-12">
                         <div className="bg-gray-50 p-6 rounded-2xl">
-                            <h4 className="font-bold text-[#1a544e] mb-4">✅ Government Sources</h4>
+                            <h4 className="font-bold text-[#1a544e] mb-4 flex items-center"><CheckCircle2 size={20} className="text-[#D4AF37] inline mr-2" /> Government Sources</h4>
                             <ul className="space-y-3 text-sm">
                                 <li><a href="https://dholera.gujarat.gov.in/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#1a544e] hover:underline">Dholera SIR Official Website</a></li>
                                 <li><a href="https://nicdc.in/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#1a544e] hover:underline">NICDC (DMIC) Official Website</a></li>
@@ -394,14 +404,14 @@ function DetailedOverview() {
                             </ul>
                         </div>
                         <div className="bg-gray-50 p-6 rounded-2xl">
-                            <h4 className="font-bold text-[#1a544e] mb-4">✅ Infrastructure</h4>
+                            <h4 className="font-bold text-[#1a544e] mb-4 flex items-center"><CheckCircle2 size={20} className="text-[#D4AF37] inline mr-2" /> Infrastructure</h4>
                             <ul className="space-y-3 text-sm">
-                                <li><a href="https://nhai.gov.in/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#1a544e] hover:underline">NHAI - Expressway Updates</a></li>
-                                <li><a href="https://www.aai.aero/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#1a544e] hover:underline">AAI - Airport Project Status</a></li>
+                                <li><a href="https://nhai.gov.in/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#1a544e] hover:underline">NHAI Expressway Updates</a></li>
+                                <li><a href="https://www.aai.aero/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#1a544e] hover:underline">AAI Airport Project Status</a></li>
                             </ul>
                         </div>
                         <div className="bg-gray-50 p-6 rounded-2xl">
-                            <h4 className="font-bold text-[#1a544e] mb-4">✅ Investment</h4>
+                            <h4 className="font-bold text-[#1a544e] mb-4 flex items-center"><CheckCircle2 size={20} className="text-[#D4AF37] inline mr-2" /> Investment</h4>
                             <ul className="space-y-3 text-sm">
                                 <li><Link href="/contact" className="text-gray-600 hover:text-[#1a544e] hover:underline">Investment Opportunities</Link></li>
                                 <li><Link href="/projects" className="text-gray-600 hover:text-[#1a544e] hover:underline">Industrial Plots & Townships</Link></li>
@@ -415,7 +425,7 @@ function DetailedOverview() {
                         <ol className="list-decimal pl-5 space-y-2 text-xs text-gray-500">
                             <li>Government of Gujarat, <span className="italic">"Dholera Special Investment Region (SIR) Overview"</span>. Official regional development metrics and planning limits.</li>
                             <li>Delhi Mumbai Industrial Corridor Development Corporation (DMICDC), Node No. 1: <span className="italic">"Dholera Smart City"</span>. Development stages and infrastructural allocation.</li>
-                            <li>National Highway Authority of India (NHAI), <span className="italic">"Ahmedabad-Dholera Expressway Project Status"</span>. Road connectivity framework.</li>
+                            <li>National Highway Authority of India (NHAI), <span className="italic">"Ahmedabad to Dholera Expressway Project Status"</span>. Road connectivity framework.</li>
                             <li>Airports Authority of India (AAI), <span className="italic">"Dholera International Airport Hub Planning"</span>. Aviation layout and passenger/cargo capacity estimations.</li>
                         </ol>
                     </div>

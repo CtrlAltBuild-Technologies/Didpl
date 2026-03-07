@@ -9,33 +9,33 @@ import { motion } from "framer-motion";
 const highlights = [
     {
         id: 1,
-        text: "Properties at prime & Strategic locations.",
-        image: "/highlights/location.png",
+        text: "Properties at prime & Strategic locations",
+        image: "/highlights/location-new.png",
     },
     {
         id: 2,
-        text: "Delivering promises with transparency & authenticity.",
-        image: "/highlights/handshake.png",
+        text: "Delivering promises with transparency & authenticity",
+        image: "/highlights/handshake-new.svg",
     },
     {
         id: 3,
-        text: "Hassle-free & simple legal process.",
-        image: "/highlights/legal.png",
+        text: "Hassle-free & simple legal process",
+        image: "/highlights/legal-new.png",
     },
     {
         id: 4,
-        text: "More than 15 years of experience.",
-        image: "/highlights/experience.png",
+        text: "More than 15 years of experience",
+        image: "/highlights/experience-new.png",
     },
     {
         id: 5,
-        text: "3000-Satisfied Customers",
-        image: "/highlights/customers.png",
+        text: "3000+ Satisfied Customers and 10K+ Site visits",
+        image: "/highlights/customers-new.png",
     },
     {
         id: 6,
         text: "Resale Assistance",
-        image: "/highlights/resale.png",
+        image: "/highlights/resale-new.png",
     },
 ];
 

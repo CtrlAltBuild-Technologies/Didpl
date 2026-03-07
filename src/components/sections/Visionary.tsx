@@ -53,7 +53,7 @@ export function Visionary() {
 
                             <div className="pt-2">
                                 <Link
-                                    href="/about"
+                                    href="/about-us"
                                     className="group inline-flex items-center gap-3 text-[#1a544e] font-bold text-lg hover:text-[#EBC078] transition-colors"
                                 >
                                     <span className="border-b-2 border-[#EBC078] pb-1">Read More About Us</span>

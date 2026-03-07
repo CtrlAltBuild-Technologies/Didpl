@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { PROJECTS, PAYMENT_TERMS, COMPANY_INFO, PlotOption } from "@/data/proposal-data";
+import { Phone, Mail, Globe } from "lucide-react";
 
 interface PlotPriceCalculatorProps {
     /** The proposal-data project id, e.g. "aero-town" | "dholera-homes-3" */
@@ -252,9 +253,9 @@ export function PlotPriceCalculator({ projectId }: PlotPriceCalculatorProps) {
                                         <div className="text-[10px] text-gray-600 leading-relaxed">
                                             <p className="font-bold text-xs text-gray-800">{company.name}</p>
                                             <p>{company.address}</p>
-                                            <p>📞 {company.phone}</p>
-                                            <p>✉ {company.email}</p>
-                                            <p>🌐 {company.website}</p>
+                                            <p className="flex items-center gap-1"><Phone size={10} /> {company.phone}</p>
+                                            <p className="flex items-center gap-1"><Mail size={10} /> {company.email}</p>
+                                            <p className="flex items-center gap-1"><Globe size={10} /> {company.website}</p>
                                         </div>
                                     </div>
 
@@ -423,7 +424,7 @@ export function PlotPriceCalculator({ projectId }: PlotPriceCalculatorProps) {
                                                         className="border border-gray-300 px-2 py-1.5 font-semibold text-xs text-gray-700 bg-[#f9f9f9] w-20 text-center"
                                                         rowSpan={2}
                                                     >
-                                                        Option-1
+                                                        Option 1
                                                     </td>
                                                     <td className="border border-gray-300 px-2 py-1.5 text-xs text-gray-700">
                                                         Down Payment ({payment.fullPayment.downPaymentPercent}%)

@@ -34,7 +34,7 @@ export function Projects() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto"
                     >
-                        Discover our premium developments designed for legitimate investment and modern living.
+
                     </motion.p>
                 </div>
 
