@@ -59,7 +59,7 @@ export function Header() {
                 <nav className="flex items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
-                        <div className="relative w-40 h-16 md:w-48 md:h-16 lg:w-56 lg:h-20">
+                        <div className="relative w-52 h-20 md:w-64 md:h-24 lg:w-72 lg:h-28">
                             <Image
                                 src="/Dholera_logo.svg"
                                 alt="DIDPL Group"
