@@ -20,7 +20,7 @@ const highlights = [
     {
         id: 3,
         text: "Hassle-free & simple legal process",
-        image: "/highlights/legal-new.png",
+        image: "/highlights/legal-new-v2.png",
     },
     {
         id: 4,
@@ -30,7 +30,7 @@ const highlights = [
     {
         id: 5,
         text: "3000+ Satisfied Customers and 10K+ Site visits",
-        image: "/highlights/customers-new.png",
+        image: "/highlights/customers-new.jpeg",
     },
     {
         id: 6,
@@ -69,7 +69,8 @@ export const CompanyHighlights = () => {
                                     src={item.image}
                                     alt={item.text}
                                     fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    className={`transition-transform duration-700 group-hover:scale-110 ${item.id === 2 ? "object-contain p-8" : "object-cover"
+                                        }`}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                             </div>
