@@ -13,7 +13,7 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                     {/* About Column */}
                     <div className="space-y-4">
-                        <Link href="/" className="block mb-6 relative w-48 h-16">
+                        <Link href="/" className="block mb-6 relative w-70 h-35">
                             <Image
                                 src="/Dholera_logo.svg"
                                 alt="DIDPL Logo"

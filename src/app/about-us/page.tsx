@@ -13,7 +13,8 @@ import {
     Lightbulb,
     TrendingUp,
     Award,
-    CheckCircle2
+    CheckCircle2,
+    MapPin
 } from "lucide-react";
 
 export default function AboutPage() {
@@ -141,11 +142,11 @@ function WhoWeAreSection() {
                                     </div>
                                     <div>
                                         <p className="text-[#1a544e] font-serif font-bold text-xl">Excellence</p>
-                                        <p className="text-gray-400 text-xs uppercase tracking-wider">Since 2010</p>
+                                        <p className="text-gray-400 text-xs uppercase tracking-wider">Since 15+ years</p>
                                     </div>
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed">
-                                    Setting new benchmarks in sustainable smart city development.
+                                    15+ years of Experience of our directors.
                                 </p>
                             </div>
                         </motion.div>
@@ -235,13 +236,14 @@ function StatsSection() {
         { label: "Projects Completed", value: 15, suffix: "+", icon: Target },
         { label: "Acres Developed", value: 500, suffix: "+", icon: TrendingUp },
         { label: "Years Experience", value: 15, suffix: "+", icon: Award },
+        { label: "Site Visits", value: 10, suffix: "K+", icon: MapPin },
     ];
 
     return (
         <section className="bg-[#1a544e] py-24 text-white relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
             <Container className="relative z-10">
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 divide-x divide-white/10">
+                <div className="grid grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 divide-x divide-white/10">
                     {stats.map((stat, index) => (
                         <motion.div
                             key={index}

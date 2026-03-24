@@ -5,6 +5,7 @@ import React from "react";
 import { Button } from "@/components/ui/Button";
 import { Phone, Mail, Check, MapPin, Building2, Users, FileCheck, Smile } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
     return (
@@ -19,7 +20,7 @@ export function Hero() {
                     priority
                 />
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#d1e7dd]/90 via-[#d1e7dd]/90 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#d1e7dd] via-[#d1e7dd]/95 to-transparent" />
             </div>
 
             {/* Content Container */}
@@ -56,14 +57,18 @@ export function Hero() {
                         </div>
 
                         <div className="flex flex-wrap gap-4">
-                            <Button size="lg" className="bg-primary hover:bg-primary-dark text-white px-8 h-14 rounded-md font-bold shadow-lg shadow-primary/20">
-                                <Phone className="w-5 h-5 mr-2" />
-                                Call Now
-                            </Button>
-                            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white px-8 h-14 rounded-md font-bold">
-                                <Mail className="w-5 h-5 mr-2" />
-                                Enquire Now
-                            </Button>
+                            <a href="tel:+918866909600">
+                                <Button size="lg" className="bg-primary hover:bg-primary-dark text-white px-8 h-14 rounded-md font-bold shadow-lg shadow-primary/20">
+                                    <Phone className="w-5 h-5 mr-2" />
+                                    Call Now
+                                </Button>
+                            </a>
+                            <Link href="/contact">
+                                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white px-8 h-14 rounded-md font-bold">
+                                    <Mail className="w-5 h-5 mr-2" />
+                                    Enquire Now
+                                </Button>
+                            </Link>
                         </div>
                     </motion.div>
                 </div>

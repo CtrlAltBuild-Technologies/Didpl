@@ -15,7 +15,7 @@ const highlights = [
     {
         id: 2,
         text: "Delivering promises with transparency & authenticity",
-        image: "/highlights/handshake-new.svg",
+        image: "/highlights/transparency-new.jpeg",
     },
     {
         id: 3,
@@ -69,9 +69,19 @@ export const CompanyHighlights = () => {
                                     src={item.image}
                                     alt={item.text}
                                     fill
-                                    className={`transition-transform duration-700 group-hover:scale-110 ${item.id === 2 ? "object-contain p-8" : "object-cover"
-                                        }`}
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
+                                {item.id === 2 && (
+                                    <div className="absolute inset-0 flex items-center justify-center z-10">
+                                        <Image
+                                            src="/Dholera_logo.svg"
+                                            alt="DIDPL Logo"
+                                            width={180}
+                                            height={70}
+                                            className="object-contain drop-shadow-lg"
+                                        />
+                                    </div>
+                                )}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                             </div>
 

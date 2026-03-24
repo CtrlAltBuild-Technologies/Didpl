@@ -52,7 +52,7 @@ function HeroSection() {
     const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
     return (
-        <section ref={ref} className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-[#1a544e] pt-24 lg:pt-32">
+        <section ref={ref} className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#1a544e] py-32 lg:py-40">
             {/* Parallax Background */}
             <motion.div
                 style={{ y, opacity }}
@@ -76,7 +76,7 @@ function HeroSection() {
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="max-w-4xl mx-auto"
                 >
-                    <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold leading-[1.1] mb-8 tracking-tight">
+                    <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-serif font-bold leading-[1.1] mb-8 tracking-tight">
                         The Power of <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-white to-[#D4AF37] bg-[length:200%_auto] animate-gradient-x">People & Vision</span>
                     </h1>
