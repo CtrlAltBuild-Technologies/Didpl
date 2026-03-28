@@ -457,6 +457,25 @@ export function PlotPriceCalculator({ projectId }: PlotPriceCalculatorProps) {
 
                                     {/* Action Buttons */}
                                     <div className="flex items-center justify-center gap-3 mb-5 no-print">
+                                        {(() => {
+                                            const brochureLinks: Record<string, string> = {
+                                                "aero-town": "https://drive.google.com/file/d/1gnqMUCqjzjNbqPAMDc89I6OjDInUZrDH/view?usp=drive_link",
+                                                "dholera-homes-3": "https://drive.google.com/file/d/1HacEKcrmU5rondBOR6CaKgcSnik8BByR/view?usp=drive_link",
+                                            };
+                                            const brochureUrl = brochureLinks[projectId];
+                                            return brochureUrl ? (
+                                                <a href={brochureUrl} target="_blank" rel="noopener noreferrer">
+                                                    <button
+                                                        className="flex items-center gap-2 bg-[#1a544e] hover:bg-[#225f56] text-white font-semibold px-5 py-2 rounded-full text-xs transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
+                                                    >
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                                        </svg>
+                                                        BROCHURE
+                                                    </button>
+                                                </a>
+                                            ) : null;
+                                        })()}
                                         <button
                                             id={`${projectId}-create-pdf-btn`}
                                             onClick={handlePrint}
@@ -506,6 +525,32 @@ export function PlotPriceCalculator({ projectId }: PlotPriceCalculatorProps) {
                                                 A New Gujarat Within Gujarat
                                             </p>
                                         </div>
+                                    </div>
+
+                                    {/* Terms, Conditions & Disclaimer */}
+                                    <div className="mt-5 print:mt-3 border border-gray-200 rounded-lg overflow-hidden">
+                                        <div className="bg-gray-100 border-b border-gray-200 px-4 py-2">
+                                            <h4 className="text-xs print:text-[10px] font-bold text-gray-700 tracking-wide uppercase">
+                                                Terms, Conditions &amp; Disclaimer
+                                            </h4>
+                                        </div>
+                                        <ol className="list-decimal list-outside text-[11px] print:text-[9px] text-gray-600 leading-relaxed px-8 py-3 space-y-1.5">
+                                            <li>
+                                                The prices displayed are indicative and generated automatically for reference purposes only.
+                                            </li>
+                                            <li>
+                                                The quoted price is valid for a period of seven (7) days from the date of generation, unless revised earlier.
+                                            </li>
+                                            <li>
+                                                Final pricing may vary based on discussions, negotiations, and specific requirements communicated to the concerned representative.
+                                            </li>
+                                            <li>
+                                                The figures provided are provisional/statutory in nature and may be subject to change without prior notice.
+                                            </li>
+                                            <li>
+                                                This quotation should not be considered as a final offer or binding commitment. For confirmation and detailed discussion, please contact the official representative using the provided contact details.
+                                            </li>
+                                        </ol>
                                     </div>
                                 </div>
                             </div>

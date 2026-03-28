@@ -88,11 +88,11 @@ function HeroSection({ onOpenPlots }: { onOpenPlots: () => void }) {
                             </Button>
                         </a>
 
-                        <Link href="/contact">
+                        <a href="https://wa.me/918866909600?text=Hi%2C%20I%20am%20interested%20in%20Dholera%20IndusPark.%20I%20would%20like%20to%20book%20a%20free%20site%20visit.%20Please%20share%20the%20details." target="_blank" rel="noopener noreferrer">
                             <Button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-[#1a544e] transition-all duration-300">
                                 Book Site Visit
                             </Button>
-                        </Link>
+                        </a>
                     </div>
                 </motion.div>
             </Container>
@@ -188,10 +188,12 @@ function LocationSection() {
                 <div className="flex flex-col md:flex-row-reverse gap-16 items-center">
                     <div className="md:w-1/2">
                         <div className="aspect-square relative rounded-[2rem] overflow-hidden border-4 border-white/20 shadow-2xl">
-                            {/* Map Placeholder */}
-                            <div className="absolute inset-0 bg-gray-800 flex items-center justify-center">
-                                <p className="text-gray-400">Map Integration / Location Image</p>
-                            </div>
+                            <Image
+                                src="/projects/induspark-location.png"
+                                alt="Dholera IndusPark Location Map"
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                     </div>
                     <div className="md:w-1/2">
@@ -237,9 +239,11 @@ function CTASection() {
                             Secure your prime plot in Dholera IndusPark today.
                         </p>
                         <div className="flex flex-col md:flex-row justify-center gap-6">
-                            <Button className="bg-[#D4AF37] text-[#1a544e] px-10 py-5 rounded-full text-lg font-bold hover:bg-white hover:text-[#1a544e] transition-all duration-300">
-                                Book a Free Site Visit
-                            </Button>
+                            <a href="https://wa.me/918866909600?text=Hi%2C%20I%20am%20interested%20in%20Dholera%20IndusPark.%20I%20would%20like%20to%20book%20a%20free%20site%20visit.%20Please%20share%20the%20details." target="_blank" rel="noopener noreferrer">
+                                <Button className="bg-[#D4AF37] text-[#1a544e] px-10 py-5 rounded-full text-lg font-bold hover:bg-white hover:text-[#1a544e] transition-all duration-300">
+                                    Book a Free Site Visit
+                                </Button>
+                            </a>
                             <Button className="bg-transparent border border-white/30 text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-white hover:text-[#1a544e] transition-all duration-300 flex items-center justify-center gap-3">
                                 <Phone size={20} /> Call Now: +91 8866 909 600
                             </Button>

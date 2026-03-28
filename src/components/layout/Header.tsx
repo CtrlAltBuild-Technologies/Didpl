@@ -118,9 +118,11 @@ export function Header() {
                                 )}
                             </div>
                         ))}
-                        <Button size="sm" className="ml-4">
-                            Book Site Visit
-                        </Button>
+                        <a href="https://wa.me/918866909600?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20free%20site%20visit%20to%20Dholera%20SIR.%20Please%20share%20the%20details." target="_blank" rel="noopener noreferrer">
+                            <Button size="sm" className="ml-4">
+                                Book Site Visit
+                            </Button>
+                        </a>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -187,7 +189,9 @@ export function Header() {
                             </div>
                         ))}
                         <div className="pt-4">
-                            <Button className="w-full">Book Free Site Visit</Button>
+                            <a href="https://wa.me/918866909600?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20free%20site%20visit%20to%20Dholera%20SIR.%20Please%20share%20the%20details." target="_blank" rel="noopener noreferrer" className="w-full">
+                                <Button className="w-full">Book Free Site Visit</Button>
+                            </a>
                             <a href="tel:+918866909600" className="flex items-center justify-center gap-2 text-gray-600 font-medium py-4">
                                 <Phone size={18} /> +91 8866 909 600
                             </a>

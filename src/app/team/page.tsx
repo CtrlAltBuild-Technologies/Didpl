@@ -12,21 +12,21 @@ const team = [
     {
         name: "Nirav Oza",
         role: "Co-Founder & Director",
-        image: "/images/team/nirav-oza.png",
+        image: "/images/team/niravOjha.jpeg",
         bio: "The next decade for DIDPL is filled with promise. My vision is to lead us toward completing 20+ strong projects, while keeping our foundation rooted in trust and transparency. As we grow, we will ensure that every customer smiles with confidence, every investor feels reassured, and every employee experiences pride in being part of our story. This is the future we are shaping... together!",
         linkedin: "https://www.linkedin.com/in/nirav-oza/"
     },
     {
         name: "Seema Amin",
         role: "Co-Founder & Director",
-        image: "/images/team/seema-amin.png",
+        image: "/images/team/seema.jpeg",
         bio: "I believe in building projects that enrich lives. Projects that are strategically located, thoughtfully planned, and consistently rewarding for our clients. My vision is for DIDPL to become a source of happiness, trust, and inspiration for everyone we serve and everyone who works with us. When our clients prosper and our people thrive, that is when our true success shines.",
         linkedin: "https://www.linkedin.com/in/seema-amin-84722b176/"
     },
     {
         name: "Milind Ranpara",
         role: "Co-Founder & Director",
-        image: "/images/team/milind-ranpara.png",
+        image: "/images/team/milind.jpeg",
         bio: "My vision is to create a company where trust, service, and satisfaction guide every decision we make. I want us to deliver seamless, end-to-end real estate solutions that genuinely help people grow. By using my on-ground experience and strong local connections, I aim to build projects that offer clarity, confidence, and long-term value to every stakeholder who chooses to walk with us.",
         linkedin: "https://www.linkedin.com/in/milind-ranpara-219627298/"
     }

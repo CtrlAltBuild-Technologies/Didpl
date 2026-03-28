@@ -1,11 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { MapPin, Phone, Mail, ChevronDown, Send, Clock, Globe } from "lucide-react";
-import Image from "next/image";
+import { motion } from "framer-motion";
+import { MapPin, Phone, Mail, Send, Clock, Globe } from "lucide-react";
 
 export default function ContactPage() {
     return (
@@ -71,73 +70,118 @@ function ContactDetailsSection() {
 
                     {/* Right: Modern Form */}
                     <div className="lg:col-span-7">
-                        <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="bg-white p-10 md:p-14 rounded-[3rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 relative"
-                        >
-                            <h3 className="text-3xl font-serif font-bold text-[#1a544e] mb-8">Send a Message</h3>
-
-                            <form className="space-y-8">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">Full Name</label>
-                                        <input
-                                            type="text"
-                                            placeholder="Enter your name"
-                                            className="w-full bg-[#FAFAFA] border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#D4AF37]/30 transition-all outline-none"
-                                        />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">Email Address</label>
-                                        <input
-                                            type="email"
-                                            placeholder="you@example.com"
-                                            className="w-full bg-[#FAFAFA] border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#D4AF37]/30 transition-all outline-none"
-                                        />
-                                    </div>
-                                </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">Phone Number</label>
-                                        <input
-                                            type="tel"
-                                            placeholder="+91"
-                                            className="w-full bg-[#FAFAFA] border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#D4AF37]/30 transition-all outline-none"
-                                        />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">Interest</label>
-                                        <select className="w-full bg-[#FAFAFA] border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#D4AF37]/30 transition-all outline-none text-gray-500 appearance-none">
-                                            <option>Residential Plot</option>
-                                            <option>Commercial Zone</option>
-                                            <option>Industrial Opportunity</option>
-                                            <option>General Inquiry</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">Your Message</label>
-                                    <textarea
-                                        rows={4}
-                                        placeholder="Tell us how we can help..."
-                                        className="w-full bg-[#FAFAFA] border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#D4AF37]/30 transition-all outline-none resize-none"
-                                    ></textarea>
-                                </div>
-
-                                <Button className="w-full bg-[#1a544e] text-white rounded-2xl py-6 hover:bg-[#D4AF37] transition-all flex items-center justify-center gap-3 group shadow-lg overflow-hidden relative">
-                                    <span className="relative z-10 flex items-center gap-2 text-lg font-bold">
-                                        Send Message <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                    </span>
-                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                                </Button>
-                            </form>
-                        </motion.div>
+                        <ContactForm />
                     </div>
                 </div>
             </Container>
         </section>
+    );
+}
+
+function ContactForm() {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        interest: "Residential Plot",
+        message: "",
+    });
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const whatsappMessage = [
+            `New Inquiry from DIDPL Website`,
+            ``,
+            `Name: ${formData.name}`,
+            `Email: ${formData.email}`,
+            `Phone: ${formData.phone}`,
+            `Interest: ${formData.interest}`,
+            `Message: ${formData.message}`,
+        ].join("\n");
+
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        window.open(`https://wa.me/918866909600?text=${encodedMessage}`, "_blank");
+    };
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="bg-white p-10 md:p-14 rounded-[3rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 relative"
+        >
+            <h3 className="text-3xl font-serif font-bold text-[#1a544e] mb-8">Send a Message</h3>
+
+            <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="space-y-2">
+                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">Full Name</label>
+                        <input
+                            type="text"
+                            placeholder="Enter your name"
+                            required
+                            value={formData.name}
+                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                            className="w-full bg-[#FAFAFA] border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#D4AF37]/30 transition-all outline-none"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">Email Address</label>
+                        <input
+                            type="email"
+                            placeholder="you@example.com"
+                            value={formData.email}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            className="w-full bg-[#FAFAFA] border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#D4AF37]/30 transition-all outline-none"
+                        />
+                    </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="space-y-2">
+                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">Phone Number</label>
+                        <input
+                            type="tel"
+                            placeholder="+91"
+                            required
+                            value={formData.phone}
+                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                            className="w-full bg-[#FAFAFA] border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#D4AF37]/30 transition-all outline-none"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">Interest</label>
+                        <select
+                            value={formData.interest}
+                            onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
+                            className="w-full bg-[#FAFAFA] border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#D4AF37]/30 transition-all outline-none text-gray-500 appearance-none"
+                        >
+                            <option>Residential Plot</option>
+                            <option>Commercial Zone</option>
+                            <option>Industrial Opportunity</option>
+                            <option>General Inquiry</option>
+                        </select>
+                    </div>
+                </div>
+                <div className="space-y-2">
+                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">Your Message</label>
+                    <textarea
+                        rows={4}
+                        placeholder="Tell us how we can help..."
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        className="w-full bg-[#FAFAFA] border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#D4AF37]/30 transition-all outline-none resize-none"
+                    ></textarea>
+                </div>
+
+                <Button type="submit" className="w-full bg-[#1a544e] text-white rounded-2xl py-6 hover:bg-[#D4AF37] transition-all flex items-center justify-center gap-3 group shadow-lg overflow-hidden relative">
+                    <span className="relative z-10 flex items-center gap-2 text-lg font-bold">
+                        Send Message <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                </Button>
+            </form>
+        </motion.div>
     );
 }
 
