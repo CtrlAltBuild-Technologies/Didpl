@@ -1,10 +1,11 @@
 import { Container } from "@/components/ui/Container";
 import { projects } from "@/data/projects";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProjectsPage() {
     return (
-        <main className="min-h-screen bg-[#FFF8E7]/30">
+        <main className="min-h-screen bg-[#FFF8E7]/30 pt-20">
             <section className="py-20 md:py-32 bg-white">
                 <Container>
                     <div className="max-w-4xl mx-auto text-center">
@@ -27,9 +28,10 @@ export default function ProjectsPage() {
                 <Container>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
                         {projects.map((project, index) => (
-                            <div
+                            <Link
                                 key={project.id}
-                                className={`relative p-2 bg-white shadow-xl group border-t-4 border-[#D4AF37] ${index % 2 === 0 ? 'md:mt-0' : 'md:mt-16'}`}
+                                href={`/projects/${project.id}`}
+                                className={`relative p-2 bg-white shadow-xl group border-t-4 border-[#D4AF37] cursor-pointer hover:shadow-2xl transition-shadow duration-300 block ${index % 2 === 0 ? 'md:mt-0' : 'md:mt-16'}`}
                             >
                                 {/* Image Frame */}
                                 <div className="relative aspect-[4/3] border-4 border-double border-[#D4AF37]/30 overflow-hidden bg-white flex items-center justify-center p-8">
@@ -48,7 +50,7 @@ export default function ProjectsPage() {
                                     <h3 className="text-3xl font-serif font-bold text-[#1a544e] mb-2">{project.title}</h3>
                                     <p className="text-[#D4AF37] font-medium tracking-widest text-sm uppercase mb-4">{project.location}</p>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </Container>
