@@ -32,9 +32,11 @@ export function CallToAction() {
                                 Book Free Site Visit
                             </Button>
                         </a>
-                        <Button size="lg" variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary">
-                            Contact Sales Team <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
+                        <a href="https://wa.me/918866909600?text=Hi%2C%20I%20would%20like%20to%20connect%20with%20your%20sales%20team.%20Please%20share%20more%20details%20about%20your%20projects%20in%20Dholera%20SIR." target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                            <Button size="lg" variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary">
+                                Contact Sales Team <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                        </a>
                     </div>
                 </motion.div>
             </Container>

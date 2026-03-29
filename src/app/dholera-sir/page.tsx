@@ -77,11 +77,7 @@ function ParallaxHero() {
                     <p className="text-xl md:text-2xl text-gray-300 font-light max-w-2xl mx-auto leading-relaxed mb-10">
                         India's first platinum rated greenfield smart city. <br /> A global manufacturing hub in the making.
                     </p>
-                    <div className="flex justify-center gap-4">
-                        <Button className="bg-[#D4AF37] text-[#1a544e] hover:bg-white rounded-full px-8 py-6 text-lg font-bold">
-                            Explore Master Plan
-                        </Button>
-                    </div>
+
                 </motion.div>
             </Container>
 

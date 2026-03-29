@@ -244,9 +244,11 @@ function CTASection() {
                                     Book a Free Site Visit
                                 </Button>
                             </a>
-                            <Button className="bg-transparent border border-white/30 text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-white hover:text-[#1a544e] transition-all duration-300 flex items-center justify-center gap-3">
-                                <Phone size={20} /> Call Now: +91 8866 909 600
-                            </Button>
+                            <a href="tel:+918866909600">
+                                <Button className="bg-transparent border border-white/30 text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-white hover:text-[#1a544e] transition-all duration-300 flex items-center justify-center gap-3">
+                                    <Phone size={20} /> Call Now: +91 8866 909 600
+                                </Button>
+                            </a>
                         </div>
                     </div>
                 </div>
