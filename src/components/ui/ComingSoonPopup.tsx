@@ -12,20 +12,36 @@ export function ComingSoonPopup() {
 
     useEffect(() => {
         setMounted(true);
-        // Show popup after a short delay for better UX
+        
+        // Initial delay before first show
         const timer = setTimeout(() => {
-            const dismissed = sessionStorage.getItem("aerotown2-popup-dismissed");
-            if (!dismissed) {
-                setIsOpen(true);
-            }
+            setIsOpen(true);
         }, 1500);
 
-        return () => clearTimeout(timer);
+        // Show repeatedly every 15 seconds
+        const interval = setInterval(() => {
+            setIsOpen(true);
+        }, 15000);
+
+        return () => {
+            clearTimeout(timer);
+            clearInterval(interval);
+        };
     }, []);
+
+    // Auto-hide after 5 seconds of being open
+    useEffect(() => {
+        let hideTimer: NodeJS.Timeout;
+        if (isOpen) {
+            hideTimer = setTimeout(() => {
+                setIsOpen(false);
+            }, 5000);
+        }
+        return () => clearTimeout(hideTimer);
+    }, [isOpen]);
 
     const handleClose = () => {
         setIsOpen(false);
-        sessionStorage.setItem("aerotown2-popup-dismissed", "true");
     };
 
     if (!mounted) return null;
@@ -33,138 +49,57 @@ export function ComingSoonPopup() {
     return createPortal(
         <AnimatePresence>
             {isOpen && (
-                <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
-                    {/* Backdrop */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-                        onClick={handleClose}
-                    />
-
+                <div className="fixed bottom-6 right-6 z-[9999] flex flex-col gap-4 pointer-events-none p-4 md:p-0">
                     {/* Popup Card */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.85, y: 40 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.85, y: 40 }}
-                        transition={{ type: "spring", damping: 20, stiffness: 300 }}
-                        className="relative w-full max-w-md overflow-hidden rounded-3xl shadow-2xl"
+                        initial={{ opacity: 0, x: 50, scale: 0.95 }}
+                        animate={{ opacity: 1, x: 0, scale: 1 }}
+                        exit={{ opacity: 0, x: 20, scale: 0.95 }}
+                        transition={{ type: "spring", damping: 25, stiffness: 350 }}
+                        className="relative w-full max-w-sm md:w-[380px] overflow-hidden rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-[#1a544e]/10 bg-white pointer-events-auto"
                     >
-                        {/* Gradient Background */}
-                        <div className="relative bg-gradient-to-br from-[#1a544e] via-[#257a70] to-[#113835]">
-                            {/* Decorative Elements */}
-                            <div className="absolute top-0 right-0 w-40 h-40 bg-[#c19b33]/20 rounded-full blur-3xl -translate-y-10 translate-x-10" />
-                            <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#c19b33]/15 rounded-full blur-2xl translate-y-8 -translate-x-8" />
-                            <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+                        {/* Header/Accent Bar */}
+                        <div className="h-1.5 w-full bg-gradient-to-r from-[#1a544e] via-[#257a70] to-[#c19b33] absolute top-0 left-0" />
 
-                            {/* Close Button */}
-                            <button
-                                onClick={handleClose}
-                                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 text-white/80 hover:text-white hover:rotate-90"
-                            >
-                                <X size={18} />
-                            </button>
+                        {/* Close Button */}
+                        <button
+                            onClick={handleClose}
+                            className="absolute top-3 right-3 z-10 p-1.5 rounded-full bg-gray-50 hover:bg-gray-100 transition-colors text-gray-400 hover:text-gray-600"
+                        >
+                            <X size={16} />
+                        </button>
 
-                            {/* Content */}
-                            <div className="relative z-[1] px-8 pt-10 pb-8 text-center">
-                                {/* Badge */}
-                                <motion.div
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.2 }}
-                                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#c19b33]/20 border border-[#c19b33]/40 mb-6"
-                                >
-                                    <Sparkles size={14} className="text-[#e0b84c]" />
-                                    <span className="text-xs font-semibold uppercase tracking-widest text-[#e0b84c]">
-                                        New Project
-                                    </span>
-                                </motion.div>
+                        {/* Content */}
+                        <div className="p-5 pt-6">
+                            <div className="flex items-start gap-4">
+                                {/* Icon */}
+                                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-[#1a544e]/10 to-[#c19b33]/10 flex items-center justify-center border border-[#1a544e]/5">
+                                    <Sparkles size={18} className="text-[#c19b33]" />
+                                </div>
 
-                                {/* Coming Soon Label */}
-                                <motion.p
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ delay: 0.3 }}
-                                    className="text-sm uppercase tracking-[0.3em] text-white/60 font-medium mb-3"
-                                >
-                                    Coming Soon
-                                </motion.p>
+                                {/* Text Content */}
+                                <div className="flex-1 min-w-0 pr-4">
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#c19b33] mb-1">
+                                        Coming Soon
+                                    </p>
+                                    <h3 className="text-lg font-serif font-bold text-[#1a544e] mb-1 truncate">
+                                        Aero Town Residency 2
+                                    </h3>
+                                    <p className="text-sm text-gray-500 leading-relaxed mb-4">
+                                        A premium residential project in Dholera Smart City.
+                                    </p>
 
-                                {/* Project Name */}
-                                <motion.h2
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.4 }}
-                                    className="text-3xl md:text-4xl font-bold font-serif text-white mb-2"
-                                >
-                                    Aero Town
-                                </motion.h2>
-                                <motion.h2
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.5 }}
-                                    className="text-3xl md:text-4xl font-bold font-serif mb-4"
-                                >
-                                    <span className="bg-gradient-to-r from-[#e0b84c] via-[#c19b33] to-[#e0b84c] bg-clip-text text-transparent">
-                                        Residency 2
-                                    </span>
-                                </motion.h2>
-
-                                {/* Divider */}
-                                <motion.div
-                                    initial={{ scaleX: 0 }}
-                                    animate={{ scaleX: 1 }}
-                                    transition={{ delay: 0.6, duration: 0.5 }}
-                                    className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#c19b33] to-transparent mx-auto mb-5"
-                                />
-
-                                {/* Description */}
-                                <motion.p
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ delay: 0.7 }}
-                                    className="text-white/70 text-sm leading-relaxed mb-8 max-w-xs mx-auto"
-                                >
-                                    A premium residential project in Dholera Smart City.
-                                    Stay tuned for exclusive launch offers!
-                                </motion.p>
-
-                                {/* CTA Buttons */}
-                                <motion.div
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.8 }}
-                                    className="flex flex-col sm:flex-row gap-3 justify-center"
-                                >
+                                    {/* Action Link */}
                                     <Link
                                         href="/contact"
                                         onClick={handleClose}
-                                        className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#c19b33] to-[#e0b84c] text-[#1a544e] font-semibold text-sm hover:shadow-lg hover:shadow-[#c19b33]/30 transition-all duration-300 hover:-translate-y-0.5"
+                                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1a544e] hover:text-[#257a70] transition-colors group"
                                     >
                                         Get Notified
-                                        <ArrowRight size={16} />
+                                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                                     </Link>
-                                    <button
-                                        onClick={handleClose}
-                                        className="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-white/20 text-white/80 font-medium text-sm hover:bg-white/10 hover:text-white transition-all duration-300"
-                                    >
-                                        Maybe Later
-                                    </button>
-                                </motion.div>
+                                </div>
                             </div>
-
-                            {/* Bottom Shimmer Effect */}
-                            <motion.div
-                                initial={{ x: "-100%" }}
-                                animate={{ x: "200%" }}
-                                transition={{
-                                    delay: 1,
-                                    duration: 1.5,
-                                    ease: "easeInOut",
-                                }}
-                                className="absolute bottom-0 left-0 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#c19b33]/60 to-transparent"
-                            />
                         </div>
                     </motion.div>
                 </div>
