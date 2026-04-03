@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyContact } from "@/components/layout/StickyContact";
+import { ComingSoonPopup } from "@/components/ui/ComingSoonPopup";
 import "./globals.css";
 
 const inter = Inter({
@@ -36,6 +37,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <StickyContact />
+        <ComingSoonPopup />
       </body>
     </html>
   );

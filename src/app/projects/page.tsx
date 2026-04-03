@@ -10,7 +10,7 @@ export default function ProjectsPage() {
                 <Container>
                     <div className="max-w-4xl mx-auto text-center">
                         <h1 className="text-5xl md:text-7xl font-bold text-[#1a544e] font-serif tracking-tight mb-8">
-                            Our Collections
+                            Our Projects
                         </h1>
                         <p className="text-xl text-gray-600 leading-relaxed font-serif italic">
                             "Curated investment opportunities in the heart of Dholera SIR."

@@ -136,12 +136,12 @@ function OverviewSection() {
                     </div>
                     <div className="md:w-1/2 relative md:h-[500px] w-full h-[400px]">
                         <div className="absolute inset-0 bg-[#D4AF37] -rotate-2 rounded-[3rem] opacity-20" />
-                        <div className="relative h-full w-full rounded-[3rem] overflow-hidden shadow-xl border-4 border-white">
+                        <div className="relative h-full w-full rounded-[3rem] overflow-hidden shadow-xl border-4 border-white bg-white flex items-center justify-center">
                             <Image
-                                src="/projects/aero-town.png" // Placeholder
-                                alt="Aero Town Overview"
+                                src="/photos/Aero-town-logoe (1).png"
+                                alt="Aero Town Residency Logo"
                                 fill
-                                className="object-cover"
+                                className="object-contain p-8"
                             />
                         </div>
                     </div>

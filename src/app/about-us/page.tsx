@@ -61,11 +61,11 @@ function HeroSection() {
                     className="max-w-4xl mx-auto flex flex-col items-center"
                 >
                     <div className="flex items-center gap-4 mb-6 justify-center">
-                        <span className="h-[2px] w-20 bg-[#D4AF37]" />
+                        {/* <span className="h-[2px] w-20 bg-[#D4AF37]" />
                         <h5 className="text-[#D4AF37] font-bold tracking-[0.3em] uppercase text-sm">
-                            Est. 2010
+
                         </h5>
-                        <span className="h-[2px] w-20 bg-[#D4AF37]" />
+                        <span className="h-[2px] w-20 bg-[#D4AF37]" /> */}
                     </div>
 
                     <h1 className="text-6xl md:text-8xl font-serif font-bold mb-8 tracking-tight leading-[1.1]">

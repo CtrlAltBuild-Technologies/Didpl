@@ -136,12 +136,12 @@ function OverviewSection() {
                     </div>
                     <div className="md:w-1/2 relative md:h-[500px] w-full h-[400px]">
                         <div className="absolute inset-0 bg-[#1a544e] rotate-3 rounded-[3rem] opacity-10" />
-                        <div className="relative h-full w-full rounded-[3rem] overflow-hidden shadow-2xl">
+                        <div className="relative h-full w-full rounded-[3rem] overflow-hidden shadow-2xl bg-white flex items-center justify-center">
                             <Image
-                                src="/projects/dholera-homes-2.png" // Placeholder
-                                alt="Dholera Homes 3 Overview"
+                                src="/photos/Home3 Logo (1).png"
+                                alt="Dholera Homes 3 Logo"
                                 fill
-                                className="object-cover"
+                                className="object-contain p-8"
                             />
                         </div>
                     </div>
