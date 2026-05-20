@@ -51,7 +51,7 @@ export function Header() {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-sm ${scrolled
-                ? "py-3"
+                ? "py-2"
                 : "py-5"
                 }`}
         >
@@ -59,7 +59,10 @@ export function Header() {
                 <nav className="flex items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
-                        <div className="relative w-52 h-20 md:w-64 md:h-24 lg:w-72 lg:h-28">
+                        <div className={`relative transition-all duration-300 ${scrolled
+                            ? "w-40 h-14 md:w-48 md:h-16 lg:w-56 lg:h-20"
+                            : "w-52 h-20 md:w-64 md:h-24 lg:w-72 lg:h-28"
+                            }`}>
                             <Image
                                 src="/Dholera_logo.svg"
                                 alt="DIDPL Group"

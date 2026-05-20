@@ -49,7 +49,7 @@ export function ComingSoonPopup() {
     return createPortal(
         <AnimatePresence>
             {isOpen && (
-                <div className="fixed bottom-6 right-6 z-[9999] flex flex-col gap-4 pointer-events-none p-4 md:p-0">
+                <div className="fixed bottom-6 left-6 z-[9999] flex flex-col gap-4 pointer-events-none p-4 md:p-0">
                     {/* Popup Card */}
                     <motion.div
                         initial={{ opacity: 0, x: 50, scale: 0.95 }}

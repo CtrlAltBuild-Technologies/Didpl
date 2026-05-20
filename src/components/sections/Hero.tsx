@@ -3,9 +3,8 @@
 import { motion, useMotionValue, useTransform, useInView, useSpring } from "framer-motion";
 import React from "react";
 import { Button } from "@/components/ui/Button";
-import { Phone, Mail, Check, MapPin, Building2, Users, FileCheck, Smile } from "lucide-react";
+import { Check, MapPin, Building2, FileCheck, Smile } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 export function Hero() {
     return (
@@ -57,18 +56,12 @@ export function Hero() {
                         </div>
 
                         <div className="flex flex-wrap gap-4">
-                            <a href="tel:+918866909600">
+                            <a href="https://wa.me/918866909600?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20free%20site%20visit%20to%20Dholera%20SIR.%20Please%20share%20the%20details." target="_blank" rel="noopener noreferrer">
                                 <Button size="lg" className="bg-primary hover:bg-primary-dark text-white px-8 h-14 rounded-md font-bold shadow-lg shadow-primary/20">
-                                    <Phone className="w-5 h-5 mr-2" />
-                                    Call Now
+                                    <MapPin className="w-5 h-5 mr-2" />
+                                    Book Site Visit
                                 </Button>
                             </a>
-                            <Link href="/contact">
-                                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white px-8 h-14 rounded-md font-bold">
-                                    <Mail className="w-5 h-5 mr-2" />
-                                    Enquire Now
-                                </Button>
-                            </Link>
                         </div>
                     </motion.div>
                 </div>

@@ -11,12 +11,23 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, Train, ShieldCheck, Warehouse, ArrowRight, Download, Phone, Map } from "lucide-react";
 import { PlotPriceCalculator } from "@/components/projects/PlotPriceCalculator";
+import { generateProjectSchema } from "@/lib/seo-meta";
 
 export default function DholeraHomes3Page() {
     const [isPlotsModalOpen, setIsPlotsModalOpen] = useState(false);
+    
+    const projectSchema = generateProjectSchema(
+      "Dholera Homes 3",
+      "Premium residential plots in Dholera SIR next to metro station with wide roads and smart amenities",
+      "/projects/dholera-homes-3.png"
+    );
 
     return (
         <main className="min-h-screen bg-white overflow-x-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
+            />
             <HeroSection onOpenPlots={() => setIsPlotsModalOpen(true)} />
             <OverviewSection />
             <HighlightsSection />

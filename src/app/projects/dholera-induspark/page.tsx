@@ -6,17 +6,27 @@ import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
 import { PlotAvailabilityViewer } from "@/components/projects/PlotAvailabilityViewer";
 import { MOCK_PLOT_DATA } from "@/data/plot-data";
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Map, TrendingUp, Truck, ShieldCheck, ArrowRight, Download, Phone } from "lucide-react";
 import { PlotPriceCalculator } from "@/components/projects/PlotPriceCalculator";
+import { generateProjectSchema } from "@/lib/seo-meta";
 
 export default function IndusParkPage() {
     const [isPlotsModalOpen, setIsPlotsModalOpen] = useState(false);
+    
+    const projectSchema = generateProjectSchema(
+      "Dholera IndusPark",
+      "Prime industrial plots in Dholera SIR with ready possession and premium location",
+      "/projects/dholera-homes-2.png"
+    );
 
     return (
         <main className="min-h-screen bg-white overflow-x-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
+            />
             <HeroSection onOpenPlots={() => setIsPlotsModalOpen(true)} />
             <OverviewSection />
             <HighlightsSection />

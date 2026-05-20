@@ -25,10 +25,17 @@ import {
     Link as LinkIcon,
     CheckCircle2
 } from "lucide-react";
+import { generateLocalBusinessSchema } from "@/lib/seo-meta";
 
 export default function DholeraPage() {
+    const localBusinessSchema = generateLocalBusinessSchema();
+    
     return (
         <main className="min-h-screen bg-white">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+            />
             <ParallaxHero />
             <FeatureShowcase />
             <DetailedOverview />

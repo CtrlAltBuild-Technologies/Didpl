@@ -9,7 +9,7 @@ import { MapPin, Phone, Mail, Send, Clock, Globe } from "lucide-react";
 export default function ContactPage() {
     return (
         <main className="min-h-screen bg-white">
-            <div className="pt-32 pb-12 bg-[#1a544e] text-white text-center px-4">
+            <div className="pt-40 pb-12 bg-[#1a544e] text-white text-center px-4">
                 <Container>
                     <h1 className="text-5xl md:text-7xl font-serif font-bold mb-4 tracking-tight">Get in Touch</h1>
                     <p className="text-xl text-gray-200 font-light max-w-2xl mx-auto italic">"Start your journey towards a secure future today."</p>

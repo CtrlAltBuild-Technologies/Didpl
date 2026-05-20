@@ -6,17 +6,27 @@ import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
 import { PlotAvailabilityViewer } from "@/components/projects/PlotAvailabilityViewer";
 import { MOCK_PLOT_DATA } from "@/data/plot-data";
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Plane, TrendingUp, Truck, ShieldCheck, ArrowRight, Download, Phone, Map } from "lucide-react";
 import { PlotPriceCalculator } from "@/components/projects/PlotPriceCalculator";
+import { generateProjectSchema } from "@/lib/seo-meta";
 
-export default function AeroTownPage() {
+function AeroTownPageContent() {
     const [isPlotsModalOpen, setIsPlotsModalOpen] = useState(false);
+    
+    const projectSchema = generateProjectSchema(
+      "AERO Town Residency",
+      "Premium residential plots in Dholera SIR near airport with high appreciation potential",
+      "/projects/aero-town.png"
+    );
 
     return (
         <main className="min-h-screen bg-white overflow-x-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
+            />
             <HeroSection onOpenPlots={() => setIsPlotsModalOpen(true)} />
             <OverviewSection />
             <HighlightsSection />
@@ -261,4 +271,8 @@ function CTASection() {
             </Container>
         </section>
     );
+}
+
+export default function AeroTownPage() {
+  return <AeroTownPageContent />;
 }
