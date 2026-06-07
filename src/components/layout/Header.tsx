@@ -59,29 +59,29 @@ export function Header() {
                 <nav className="flex items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
-                        <div className={`relative transition-all duration-300 ${scrolled
-                            ? "w-40 h-14 md:w-48 md:h-16 lg:w-56 lg:h-20"
-                            : "w-52 h-20 md:w-64 md:h-24 lg:w-72 lg:h-28"
+                        <div className={`relative transition-all duration-300 w-52 md:w-64 lg:w-48 xl:w-72 ${scrolled
+                            ? "h-14 md:h-16 lg:h-14 xl:h-20"
+                            : "h-20 md:h-24 lg:h-20 xl:h-28"
                             }`}>
                             <Image
                                 src="/Dholera_logo.svg"
                                 alt="DIDPL Group"
                                 fill
-                                className="object-contain"
+                                className="object-contain object-left"
                                 priority
                             />
                         </div>
                     </Link>
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden lg:flex items-center gap-8">
+                    {/* Desktop Navigation Links */}
+                    <div className="hidden lg:flex items-center justify-center flex-1 gap-3 xl:gap-8 mx-2 xl:mx-8">
                         {navigation.map((item) => (
-                            <div key={item.name} className="relative group">
+                            <div key={item.name} className="relative group whitespace-nowrap">
                                 {item.submenu ? (
                                     <>
                                         <Link
                                             href={item.href}
-                                            className={`flex items-center gap-1 text-base font-medium transition-colors hover:text-accent py-2 ${pathname.startsWith(item.href)
+                                            className={`flex items-center gap-1 text-sm xl:text-base font-medium transition-colors hover:text-accent py-2 ${pathname.startsWith(item.href)
                                                 ? "text-accent font-semibold"
                                                 : "text-gray-700"
                                                 }`}
@@ -111,7 +111,7 @@ export function Header() {
                                 ) : (
                                     <Link
                                         href={item.href}
-                                        className={`text-base font-medium transition-colors hover:text-accent ${pathname === item.href
+                                        className={`text-sm xl:text-base font-medium transition-colors hover:text-accent whitespace-nowrap ${pathname === item.href
                                             ? "text-accent font-semibold"
                                             : "text-gray-700"
                                             }`}
@@ -121,8 +121,17 @@ export function Header() {
                                 )}
                             </div>
                         ))}
+                    </div>
+
+                    {/* Desktop Buttons */}
+                    <div className="hidden lg:flex items-center gap-2 whitespace-nowrap mr-2 xl:mr-8">
+                        <a href="https://didpl-online-crm.vercel.app/" target="_blank" rel="noopener noreferrer">
+                            <Button size="sm">
+                                Employee Login
+                            </Button>
+                        </a>
                         <a href="https://wa.me/918866909600?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20free%20site%20visit%20to%20Dholera%20SIR.%20Please%20share%20the%20details." target="_blank" rel="noopener noreferrer">
-                            <Button size="sm" className="ml-4">
+                            <Button size="sm">
                                 Book Site Visit
                             </Button>
                         </a>
@@ -191,7 +200,10 @@ export function Header() {
                                 )}
                             </div>
                         ))}
-                        <div className="pt-4">
+                        <div className="pt-4 flex flex-col gap-3">
+                            <a href="https://didpl-online-crm.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full">
+                                <Button variant="outline" className="w-full">Employee Login</Button>
+                            </a>
                             <a href="https://wa.me/918866909600?text=Hi%2C%20I%20am%20interested%20in%20booking%20a%20free%20site%20visit%20to%20Dholera%20SIR.%20Please%20share%20the%20details." target="_blank" rel="noopener noreferrer" className="w-full">
                                 <Button className="w-full">Book Free Site Visit</Button>
                             </a>
