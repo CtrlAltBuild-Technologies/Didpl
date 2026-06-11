@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   description: "Invest in Dholera Smart City plots near airport. Premium Dholera SIR investment opportunities with 10x appreciation potential. Book your free site visit today.",
   keywords: "Dholera plots near airport, Dholera SIR investment, smart city investment, real estate Dholera, DIDPL",
   icons: {
-    icon: "/Dholera_logo.svg",
-    apple: "/Dholera_logo.svg",
+    icon: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 
