@@ -24,6 +24,7 @@ export default function AboutPage() {
             <WhoWeAreSection />
             <StatsSection />
             <VisionMissionSection />
+            <PaymentSection />
         </main>
     );
 }
@@ -358,3 +359,29 @@ function CTASection() {
         </section>
     );
 }
+
+function PaymentSection() {
+    return (
+        <section className="py-24 bg-[#FAFAFA]">
+            <Container className="flex flex-col items-center">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#1a544e] mb-4">
+                        Secure Payments
+                    </h2>
+                    <p className="text-gray-600 text-lg">
+                        Scan the QR code below for hassle-free payments to DIDPL.
+                    </p>
+                </div>
+                <div className="relative w-full max-w-md aspect-[3/4] bg-white rounded-[2rem] shadow-xl border border-gray-100 flex items-center justify-center overflow-hidden">
+                    <Image
+                        src="/photos/qr.jpeg"
+                        alt="DIDPL Payment QR Code"
+                        fill
+                        className="object-contain p-4"
+                    />
+                </div>
+            </Container>
+        </section>
+    );
+}
+
