@@ -43,6 +43,18 @@ export default function ProjectsPage() {
                                             className="object-contain"
                                         />
                                     </div>
+                                    
+                                    {(project as any).soldOut && (
+                                        <div className="absolute top-4 right-4 z-30 pointer-events-none">
+                                            <Image
+                                                src="/soldout.png"
+                                                alt="Sold Out"
+                                                width={140}
+                                                height={140}
+                                                className="opacity-90 transform -rotate-12 drop-shadow-xl"
+                                            />
+                                        </div>
+                                    )}
                                 </div>
 
                                 {/* Content Card */}

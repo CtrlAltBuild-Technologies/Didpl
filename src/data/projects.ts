@@ -6,7 +6,8 @@ export const projects = [
         logo: "/photos/Induspark-logo.png",
         image: "/projects/dholera-homes-2.png",
         features: ["Premium Location", "Smart Amenities", "Ready Possession"],
-        status: "Completed"
+        status: "Sold Out",
+        soldOut: true
     },
     {
         id: "dholera-homes-3",
@@ -15,7 +16,8 @@ export const projects = [
         logo: "/photos/Home3 Logo.png",
         image: "/projects/dholera-homes-3.png",
         features: ["Residential Zone", "Next to Metro", "Wide Roads"],
-        status: "Booking Open"
+        status: "Sold Out",
+        soldOut: true
     },
     {
         id: "aero-town",

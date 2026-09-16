@@ -61,6 +61,18 @@ export function Projects() {
                                         {project.status}
                                     </span>
                                 </div>
+                                
+                                {project.soldOut && (
+                                    <div className="absolute top-2 right-2 z-30 pointer-events-none">
+                                        <Image
+                                            src="/soldout.png"
+                                            alt="Sold Out"
+                                            width={100}
+                                            height={100}
+                                            className="opacity-90 transform -rotate-12 drop-shadow-xl"
+                                        />
+                                    </div>
+                                )}
 
                                 {/* Logo Display */}
                                 <div className="relative h-48 w-full flex items-center justify-center mb-6 mt-4 mix-blend-multiply">
