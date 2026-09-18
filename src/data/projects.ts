@@ -26,7 +26,8 @@ export const projects = [
         logo: "/photos/Aero-town-logoe.png",
         image: "/projects/aero-town.png",
         features: ["Airport Zone", "High Appreciation", "Gated Community"],
-        status: "Selling Fast"
+        status: "Sold Out",
+        soldOut: true
     },
     {
         id: "logistic-park",

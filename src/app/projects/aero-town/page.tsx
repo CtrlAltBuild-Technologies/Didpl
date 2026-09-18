@@ -68,6 +68,15 @@ function HeroSection({ onOpenPlots }: { onOpenPlots: () => void }) {
                     className="object-cover"
                     priority
                 />
+                <div className="absolute top-10 right-10 md:top-20 md:right-20 z-30 pointer-events-none">
+                    <Image
+                        src="/soldout.png"
+                        alt="Sold Out"
+                        width={200}
+                        height={200}
+                        className="opacity-90 transform -rotate-12 drop-shadow-2xl"
+                    />
+                </div>
             </motion.div>
 
             <Container className="relative z-20 text-white w-full">
